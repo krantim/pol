@@ -23,21 +23,63 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundColor:[UIColor colorWithRed:236/255.0f green:240/255.0f blue:241/255.0f alpha:1.0]];
-        self.layer.cornerRadius = frame.size.width/2;
-        self.layer.masksToBounds = YES;
+        [self setBackgroundColor:[UIColor clearColor]];
+        //self.layer.cornerRadius = frame.size.width/2;
+        //self.layer.masksToBounds = YES;
         
         a = 1.5;
         b = 0;
         jia = NO;
         
         _currentWaterColor = [UIColor colorWithRed:52/255.0f green:152/255.0f blue:219/255.0f alpha:0.9];
-        _currentLinePointY = 100;
+        _currentLinePointY = 150;
         
         [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(animateWave) userInfo:nil repeats:YES];
         
+        UIImageView *fish = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nemo-29"]];
+        fish.frame = CGRectMake(0, _currentLinePointY+50, 80, 50);
+        fish.center = CGPointMake(self.center.x, fish.center.y);
+        [self addSubview:fish];
+        
+        CABasicAnimation *moveUp;
+        moveUp          = [CABasicAnimation animationWithKeyPath:@"position.y"];
+        moveUp.byValue  = @(-30.0f);
+        moveUp.duration = 2.0;
+        moveUp.repeatCount = INFINITY;
+        moveUp.removedOnCompletion = NO;
+        moveUp.autoreverses = YES;
+        moveUp.fillMode = kCAFillModeBoth;
+        moveUp.delegate = self;
+        [[fish layer] addAnimation:moveUp forKey:@"y"];
+        
+        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(addBubble) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(addBubble) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(addBubble) userInfo:nil repeats:YES];
     }
     return self;
+}
+
+- (void)addBubble {
+    UIView *bubble1 = [[UIView alloc] initWithFrame:CGRectMake(self.center.x-10-arc4random()%10, self.center.y+20+arc4random()%30, 10, 10)];
+    bubble1.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.8];
+    bubble1.layer.cornerRadius = 5;
+    [self addSubview:bubble1];
+    
+    CABasicAnimation *moveUp;
+    moveUp          = [CABasicAnimation animationWithKeyPath:@"position.y"];
+    moveUp.byValue  = @(-40.0f);
+    moveUp.duration = 1.5;
+    moveUp.beginTime = (arc4random()%8)/10;
+    moveUp.removedOnCompletion = NO;
+    moveUp.fillMode = kCAFillModeBoth;
+    moveUp.delegate = self;
+    [[bubble1 layer] addAnimation:moveUp forKey:@"y"];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        bubble1.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [bubble1 removeFromSuperview];
+    }];
 }
 
 - (void)animateWave {
