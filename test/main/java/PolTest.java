@@ -1,11 +1,11 @@
 import org.junit.*;
 
-public class BalanceTest {
-    BalanceDriver driver;
+public class PolTest {
+    PolDriver driver;
 
     @Before
     public void setUp() {
-        driver = new BalanceDriver();
+        driver = new PolDriver();
     }
 
     @Ignore("To be implemented: our first UI test!")

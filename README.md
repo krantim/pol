@@ -38,9 +38,9 @@ Can be downloaded [here](http://appium.io/downloads.html)
 ## Running the functional tests
 #### Use Xcode to build your app
 #### Point the functional tests at the built app
-In BalanceDriver.java, set APP_HOME:
+In PolDriver.java, set APP_HOME:
 
 ```
-//private static final String APP_HOME = System.getenv("HOME") + "/LoginViewExample.app";
+//private static final String APP_HOME = System.getenv("HOME") + "/pol-ios/POL.app";
 private static final String APP_HOME = "";
 ```

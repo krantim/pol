@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BalanceDriver {
+public class PolDriver {
     public static final int WAIT_IN_SECONDS = 30;
     public static final int INTERVAL_IN_MILLIS = 1000;
 
