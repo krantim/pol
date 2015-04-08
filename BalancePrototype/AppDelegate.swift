@@ -16,6 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GAI.sharedInstance().trackUncaughtExceptions = true
+        GAI.sharedInstance().dispatchInterval = 20
+        GAI.sharedInstance().logger.logLevel = GAILogLevel.Verbose
+        GAI.sharedInstance().trackerWithTrackingId("UA-61473818-1")
+        
+        Mixpanel.sharedInstanceWithToken("9503b8ed2d58d2fea8821bda2adef7cf")
+        
+        let userNotificationTypes = (.Alert |
+            .Badge |
+            .Sound) as UIUserNotificationType
+        
+        if objc_getClass("UIUserNotificationSettings") != nil {
+            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil) as UIUserNotificationSettings
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        } else {
+            application.registerForRemoteNotificationTypes(.Badge | .Alert | .Sound)
+        }
+        
         return true
     }
 
@@ -39,6 +59,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        notification("นายไทย พาณิชย์ ได้ทำการโอนเงินจำนวน 10,000 บาท", time: 10.0)
+        notification("คุณมียอดชำระค่าไฟจำนวน 2,024.21 บาท", time: 12.0)
+        notification("เงินในบัญชีไม่พอชำระค่าไฟ 2024.21 บาท", time: 14.0)
+    }
+    
+    func notification(message:String, time:Double) {
+        var notification = UILocalNotification()
+        notification.fireDate = NSDate().dateByAddingTimeInterval(time)
+        notification.alertBody = message
+        notification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
 

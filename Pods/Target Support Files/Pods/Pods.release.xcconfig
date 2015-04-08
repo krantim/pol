@@ -1,0 +1,7 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFViewShaker" "${PODS_ROOT}/Headers/Public/BKPasscodeView" "${PODS_ROOT}/Headers/Public/DPMeterView" "${PODS_ROOT}/Headers/Public/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/Public/JVFloatingDrawer" "${PODS_ROOT}/Headers/Public/Mixpanel" $(SDKROOT)/usr/include/libz
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/GoogleAnalytics-iOS-SDK" "$(PODS_ROOT)/Mixpanel/Mixpanel"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFViewShaker" -isystem "${PODS_ROOT}/Headers/Public/BKPasscodeView" -isystem "${PODS_ROOT}/Headers/Public/DPMeterView" -isystem "${PODS_ROOT}/Headers/Public/GoogleAnalytics-iOS-SDK" -isystem "${PODS_ROOT}/Headers/Public/JVFloatingDrawer" -isystem "${PODS_ROOT}/Headers/Public/Mixpanel"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"GoogleAnalyticsServices" -l"MPCategoryHelpers" -l"Pods-AFViewShaker" -l"Pods-BKPasscodeView" -l"Pods-DPMeterView" -l"Pods-GoogleAnalytics-iOS-SDK" -l"Pods-JVFloatingDrawer" -l"Pods-Mixpanel" -l"icucore" -l"sqlite3" -l"z" -framework "Accelerate" -framework "CFNetwork" -framework "CoreData" -framework "CoreGraphics" -framework "CoreMotion" -framework "CoreTelephony" -framework "Foundation" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods
