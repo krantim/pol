@@ -15,6 +15,12 @@
 		C87535311AD5157300999099 /* POLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87535301AD5157300999099 /* POLTests.swift */; };
 		C87535481AD5196200999099 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87535451AD5185D00999099 /* Alamofire.framework */; };
 		C875354A1AD5197200999099 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C87535451AD5185D00999099 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C87535511AD51BBA00999099 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87535501AD51BBA00999099 /* Services.swift */; };
+		C87535531AD51C2500999099 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87535501AD51BBA00999099 /* Services.swift */; };
+		C87535591AD531F500999099 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535561AD531F500999099 /* YSLContainerViewController.m */; };
+		C875355A1AD531F500999099 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535581AD531F500999099 /* YSLScrollMenuView.m */; };
+		C875355C1AD5326300999099 /* AccountsPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355B1AD5326300999099 /* AccountsPagerViewController.swift */; };
+		C875355E1AD5334700999099 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355D1AD5334700999099 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,13 @@
 		C87535301AD5157300999099 /* POLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POLTests.swift; sourceTree = "<group>"; };
 		C875353F1AD5185D00999099 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Vendor/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 		C875354C1AD5199800999099 /* POL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "POL-Bridging-Header.h"; sourceTree = "<group>"; };
+		C87535501AD51BBA00999099 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Services.swift; path = Helper/Services.swift; sourceTree = "<group>"; };
+		C87535551AD531F500999099 /* YSLContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLContainerViewController.h; path = Vendor/YSLScrollMenu/YSLContainerViewController.h; sourceTree = SOURCE_ROOT; };
+		C87535561AD531F500999099 /* YSLContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLContainerViewController.m; path = Vendor/YSLScrollMenu/YSLContainerViewController.m; sourceTree = SOURCE_ROOT; };
+		C87535571AD531F500999099 /* YSLScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLScrollMenuView.h; path = Vendor/YSLScrollMenu/YSLScrollMenuView.h; sourceTree = SOURCE_ROOT; };
+		C87535581AD531F500999099 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLScrollMenuView.m; path = Vendor/YSLScrollMenu/YSLScrollMenuView.m; sourceTree = SOURCE_ROOT; };
+		C875355B1AD5326300999099 /* AccountsPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPagerViewController.swift; sourceTree = "<group>"; };
+		C875355D1AD5334700999099 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +128,8 @@
 				C875353C1AD517C700999099 /* Vendor */,
 				C875351A1AD5157300999099 /* AppDelegate.swift */,
 				C875351C1AD5157300999099 /* ViewController.swift */,
+				C875355B1AD5326300999099 /* AccountsPagerViewController.swift */,
+				C875355D1AD5334700999099 /* AccountViewController.swift */,
 				C875351E1AD5157300999099 /* Main.storyboard */,
 				C87535211AD5157300999099 /* Images.xcassets */,
 				C87535231AD5157300999099 /* LaunchScreen.xib */,
@@ -166,6 +181,7 @@
 		C875353C1AD517C700999099 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C87535541AD531EB00999099 /* YSLScrollMenu */,
 				C875353F1AD5185D00999099 /* Alamofire.xcodeproj */,
 			);
 			name = Vendor;
@@ -183,8 +199,20 @@
 		C875354B1AD5198100999099 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C87535501AD51BBA00999099 /* Services.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		C87535541AD531EB00999099 /* YSLScrollMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C87535551AD531F500999099 /* YSLContainerViewController.h */,
+				C87535561AD531F500999099 /* YSLContainerViewController.m */,
+				C87535571AD531F500999099 /* YSLScrollMenuView.h */,
+				C87535581AD531F500999099 /* YSLScrollMenuView.m */,
+			);
+			name = YSLScrollMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +340,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C875351D1AD5157300999099 /* ViewController.swift in Sources */,
+				C87535591AD531F500999099 /* YSLContainerViewController.m in Sources */,
+				C875355E1AD5334700999099 /* AccountViewController.swift in Sources */,
+				C87535511AD51BBA00999099 /* Services.swift in Sources */,
 				C875351B1AD5157300999099 /* AppDelegate.swift in Sources */,
+				C875355C1AD5326300999099 /* AccountsPagerViewController.swift in Sources */,
+				C875355A1AD531F500999099 /* YSLScrollMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C87535311AD5157300999099 /* POLTests.swift in Sources */,
+				C87535531AD51C2500999099 /* Services.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
