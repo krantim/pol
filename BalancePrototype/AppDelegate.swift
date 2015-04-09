@@ -59,9 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        notification("นายไทย พาณิชย์ ได้ทำการโอนเงินจำนวน 10,000 บาท", time: 10.0)
-        notification("คุณมียอดชำระค่าไฟจำนวน 2,024.21 บาท", time: 12.0)
-        notification("เงินในบัญชีไม่พอชำระค่าไฟ 2024.21 บาท", time: 14.0)
+        notification("นายไทย พาณิชย์ ได้ทำการโอนเงินจำนวน 10,000 บาท", time: 5.0)
+        //notification("คุณมียอดชำระค่าไฟจำนวน 2,024.21 บาท", time: 12.0)
+        //notification("เงินในบัญชีไม่พอชำระค่าไฟ 2024.21 บาท", time: 14.0)
     }
     
     func notification(message:String, time:Double) {

@@ -29,7 +29,7 @@ class EverydayViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        scrollview.contentSize = CGSizeMake(scrollview.frame.size.width, 800)
+        scrollview.contentSize = CGSizeMake(scrollview.frame.size.width, 950)
         scrollview.scrollEnabled = scroll
     }
 

@@ -60,7 +60,8 @@ class OTPViewController: GAITrackedViewController, BKPasscodeViewControllerDeleg
         
         isLogin = true
         isRegistered = true
-        self.dismissViewControllerAnimated(false, completion:nil)
+        self.performSegueWithIdentifier("goToMainSetting", sender: nil)
+        //self.dismissViewControllerAnimated(false, completion:nil)
     }
     
     /*

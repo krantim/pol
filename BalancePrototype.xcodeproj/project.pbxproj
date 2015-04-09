@@ -220,10 +220,11 @@
 				TargetAttributes = {
 					C860E5D21ACA94F600D7DD1A = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = QCU5S2X4JZ;
+						DevelopmentTeam = 8A9BJ86542;
 					};
 					C860E5E71ACA94F600D7DD1A = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 8A9BJ86542;
 						TestTargetID = C860E5D21ACA94F600D7DD1A;
 					};
 				};
