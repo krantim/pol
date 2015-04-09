@@ -5,7 +5,7 @@ apply plugin: 'idea'
 mainClassName = 'th.co.scb.polserver.PolApplication'
 project.ext {
     dropwizardVersion = '0.8.0'
-    dropWizardConfig = 'waterfall.yml'
+    dropWizardConfig = 'polserver.yml'
 }
 
 repositories {
@@ -33,7 +33,7 @@ apply plugin: "eu.appsatori.fatjar"
 version = '1.0'
 fatJar {
     manifest {
-        attributes 'Implementation-Title': 'Waterfall Backend',
+        attributes 'Implementation-Title': 'POL Server',
                 'Implementation-Version': version,
                 'Main-Class': mainClassName
     }
