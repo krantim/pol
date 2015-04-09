@@ -1,5 +1,6 @@
 package th.co.scb.polserver.resources;
 
+import th.co.scb.polserver.client.POLClient;
 import th.co.scb.polserver.core.Account;
 
 import javax.ws.rs.GET;
@@ -7,7 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,12 +19,17 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class AccountResources {
 
+    private static final String ACCOUNT_URL = "localhost:8081/account";
+    private final POLClient client;
+
+    public AccountResources(POLClient client) {
+        this.client = client;
+    }
+
     @Path("/{userId}/accounts")
     @GET
     public List<Account> getAllAccounts(@PathParam("userId") String userId) {
-        List<Account> lstAccount = new ArrayList<Account>();
-        lstAccount.add(new Account("aaa", "Saving", "12345"));
-
-        return lstAccount;
+        Account[] accounts = (Account[]) client.fetchJson(ACCOUNT_URL, Account[].class);
+        return Arrays.asList(accounts);
     }
 }

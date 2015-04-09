@@ -13,8 +13,10 @@ repositories {
 }
 
 dependencies {
-    compile 'io.dropwizard:dropwizard-core:' + dropwizardVersion
-    testCompile 'io.dropwizard:dropwizard-testing:' + dropwizardVersion
+    compile 'io.dropwizard:dropwizard-core:' + dropwizardVersion,
+            'io.dropwizard:dropwizard-client:' + dropwizardVersion
+    testCompile 'io.dropwizard:dropwizard-testing:' + dropwizardVersion,
+                'org.mockito:mockito-core:1.+'
 }
 
 buildscript {
