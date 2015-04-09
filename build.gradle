@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+mainClassName = 'th.co.scb.polserver.PolApplication'
+project.ext {
+    dropwizardVersion = '0.8.0'
+    dropWizardConfig = 'waterfall.yml'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:' + dropwizardVersion
+    testCompile 'io.dropwizard:dropwizard-testing:' + dropwizardVersion
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "eu.appsatori:gradle-fatjar-plugin:0.3"
+    }
+}
+apply plugin: "eu.appsatori.fatjar"
+
+
+version = '1.0'
+fatJar {
+    manifest {
+        attributes 'Implementation-Title': 'Waterfall Backend',
+                'Implementation-Version': version,
+                'Main-Class': mainClassName
+    }
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+}
+
+run {
+    args 'server'
+}
