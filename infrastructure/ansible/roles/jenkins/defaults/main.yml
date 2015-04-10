@@ -1,19 +1,20 @@
 ---
 # defaults file for jenkins
 jenkins_plugins:
-# Build Monitor Plugin     Success
-# Parameterized Trigger Plugin     Success
-# jQuery Plugin     Success
-# Build Pipeline Plugin     Success
-# Green Balls     Success
-# AnsiColor Plugin     Success
-# Ruby Plugin     Success
-# Token Macro Plugin     Success
-# Email-ext plugin
-#  Installing
-# Xcode Plugin     Pending
-# JIRA Plugin     Pending
-# Timestamper     Pending
-# Sounds plugin     Pending
-# JobConfigHistory Plugin
+# AnsiColor Plugin
+# Build Monitor Plugin
+# Build Pipeline Plugin
+# CloudBees Folders Plugin
 # Copy Artifact Plugin
+# Email-ext plugin
+# Green Balls
+# JIRA Plugin
+# JobConfigHistory Plugin
+# jQuery Plugin
+# Parameterized Trigger Plugin
+# PegDown Formatter Plugin
+# Ruby Plugin
+# Sounds plugin
+# Timestamper
+# Token Macro Plugin
+# Xcode Plugin
