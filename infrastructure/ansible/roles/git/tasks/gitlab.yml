@@ -6,10 +6,6 @@
 # - https://wiki.postgresql.org/wiki/YUM_Installation
 # - http://www.postgresql.org/download/linux/redhat/
 
-- name: Install required packages
-  yum: name={{ item }} state=installed
-  with_items: git_packages
-
 - name: Setup the peripheral services
   yum: name={{ item }} state=installed
   with_items:

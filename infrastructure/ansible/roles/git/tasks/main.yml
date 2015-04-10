@@ -1,1 +1,5 @@
 ---
+
+- name: Install required packages
+  yum: name={{ item }} state=installed
+  with_items: git_packages
