@@ -10,6 +10,10 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
+    @IBOutlet weak var accountNameLabel: UILabel!
+    @IBOutlet weak var accountNumberLabel: UILabel!
+    @IBOutlet weak var accountTypeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +25,11 @@ class AccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupAccountData(account:Account) {
+        accountNameLabel.text = account.accountName
+        accountNumberLabel.text = account.accountNumber
+        accountTypeLabel.text = account.getAccountTypeString()
+    }
 
     /*
     // MARK: - Navigation
