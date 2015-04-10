@@ -17,12 +17,12 @@ import java.util.List;
 
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
-public class AccountResources {
+public class AccountResource {
 
     private static final String ACCOUNT_URL = "localhost:8081/account";
     private final POLClient client;
 
-    public AccountResources(POLClient client) {
+    public AccountResource(POLClient client) {
         this.client = client;
     }
 

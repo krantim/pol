@@ -14,7 +14,7 @@ import static org.mockito.Mockito.when;
 /**
  * Created by bon on 4/8/2015 AD.
  */
-public class AccountResourcesTest {
+public class AccountResourceTest {
 
     @Test
     public void shouldReturnAccountList() throws Exception {
@@ -24,7 +24,7 @@ public class AccountResourcesTest {
 
         when(mockClient.fetchJson(any(String.class), any(Class.class))).thenReturn(expectedAccounts);
 
-        List<Account> actualAccounts = new AccountResources(mockClient).getAllAccounts("blah");
+        List<Account> actualAccounts = new AccountResource(mockClient).getAllAccounts("blah");
         assertThat(actualAccounts.get(0)).isEqualTo(account);
     }
 }

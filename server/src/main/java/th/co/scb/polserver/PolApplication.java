@@ -5,10 +5,8 @@ import io.dropwizard.client.HttpClientBuilder;
 import io.dropwizard.setup.Environment;
 import org.apache.http.client.HttpClient;
 import th.co.scb.polserver.client.POLClient;
-import th.co.scb.polserver.resources.AccountResources;
+import th.co.scb.polserver.resources.AccountResource;
 import th.co.scb.polserver.resources.RootResources;
-
-import javax.security.auth.login.Configuration;
 
 /**
  * Created by bon on 4/8/2015 AD.
@@ -19,10 +17,10 @@ public class PolApplication extends Application<PolConfiguration> {
         POLClient client = registerPOLClient(configuration, environment);
 
         final RootResources resources = new RootResources();
-        final AccountResources accountResources = new AccountResources(client);
+        final AccountResource accountResource = new AccountResource(client);
 
         environment.jersey().register(resources);
-        environment.jersey().register(accountResources);
+        environment.jersey().register(accountResource);
 
 
     }
