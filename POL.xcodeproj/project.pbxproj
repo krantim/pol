@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C809B6C21AD659B80047F19A /* AccountViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809B6C11AD659B80047F19A /* AccountViewControllerTest.swift */; };
+		C809B6C31AD65BDE0047F19A /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81979001AD6340800518CBB /* Account.swift */; };
+		C809B6C41AD65C700047F19A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355D1AD5334700999099 /* AccountViewController.swift */; };
+		C809B6C51AD65F370047F19A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875351E1AD5157300999099 /* Main.storyboard */; };
+		C809B6C81AD6624F0047F19A /* AccountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809B6C71AD6624F0047F19A /* AccountBuilder.swift */; };
 		C81978FD1AD62E6300518CBB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; };
 		C81978FE1AD62E7100518CBB /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C81979011AD6340800518CBB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81979001AD6340800518CBB /* Account.swift */; };
 		C875351B1AD5157300999099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875351A1AD5157300999099 /* AppDelegate.swift */; };
 		C875351D1AD5157300999099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875351C1AD5157300999099 /* ViewController.swift */; };
 		C87535201AD5157300999099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875351E1AD5157300999099 /* Main.storyboard */; };
@@ -21,6 +27,8 @@
 		C875355A1AD531F500999099 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535581AD531F500999099 /* YSLScrollMenuView.m */; };
 		C875355C1AD5326300999099 /* AccountsPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355B1AD5326300999099 /* AccountsPagerViewController.swift */; };
 		C875355E1AD5334700999099 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355D1AD5334700999099 /* AccountViewController.swift */; };
+		C8E426D71AD673A000EC05B4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; };
+		C8E426D91AD673B000EC05B4 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,18 +79,31 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		C87535491AD5196700999099 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 				C81978FE1AD62E7100518CBB /* Alamofire.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8E426D81AD673A500EC05B4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C8E426D91AD673B000EC05B4 /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C809B6C11AD659B80047F19A /* AccountViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewControllerTest.swift; sourceTree = "<group>"; };
+		C809B6C71AD6624F0047F19A /* AccountBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountBuilder.swift; path = Builder/AccountBuilder.swift; sourceTree = "<group>"; };
 		C81978EC1AD62E4800518CBB /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Vendor/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
+		C81979001AD6340800518CBB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = Model/Account.swift; sourceTree = "<group>"; };
 		C87535151AD5157300999099 /* POL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C87535191AD5157300999099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C875351A1AD5157300999099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,12 +137,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E426D71AD673A000EC05B4 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C809B6C61AD662240047F19A /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				C809B6C71AD6624F0047F19A /* AccountBuilder.swift */,
+			);
+			name = Builder;
+			sourceTree = "<group>";
+		};
 		C81978ED1AD62E4800518CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +212,9 @@
 		C875352D1AD5157300999099 /* POLTests */ = {
 			isa = PBXGroup;
 			children = (
+				C809B6C61AD662240047F19A /* Builder */,
 				C87535301AD5157300999099 /* POLTests.swift */,
+				C809B6C11AD659B80047F19A /* AccountViewControllerTest.swift */,
 				C875352E1AD5157300999099 /* Supporting Files */,
 			);
 			path = POLTests;
@@ -199,6 +231,7 @@
 		C875353A1AD517BB00999099 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C81979001AD6340800518CBB /* Account.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -267,6 +300,7 @@
 				C87535261AD5157300999099 /* Sources */,
 				C87535271AD5157300999099 /* Frameworks */,
 				C87535281AD5157300999099 /* Resources */,
+				C8E426D81AD673A500EC05B4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -367,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C809B6C51AD65F370047F19A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +417,7 @@
 				C875355E1AD5334700999099 /* AccountViewController.swift in Sources */,
 				C87535511AD51BBA00999099 /* Services.swift in Sources */,
 				C875351B1AD5157300999099 /* AppDelegate.swift in Sources */,
+				C81979011AD6340800518CBB /* Account.swift in Sources */,
 				C875355C1AD5326300999099 /* AccountsPagerViewController.swift in Sources */,
 				C875355A1AD531F500999099 /* YSLScrollMenuView.m in Sources */,
 			);
@@ -391,8 +427,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C809B6C21AD659B80047F19A /* AccountViewControllerTest.swift in Sources */,
+				C809B6C41AD65C700047F19A /* AccountViewController.swift in Sources */,
+				C809B6C31AD65BDE0047F19A /* Account.swift in Sources */,
 				C87535311AD5157300999099 /* POLTests.swift in Sources */,
 				C87535531AD51C2500999099 /* Services.swift in Sources */,
+				C809B6C81AD6624F0047F19A /* AccountBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,19 +9,17 @@
 import UIKit
 
 class AccountsPagerViewController: UIViewController, YSLContainerViewControllerDelegate {
-
+    
+    var accountData: [Account]?
+    var accountControllers = [AccountViewController]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var controllers = [AnyObject]()
         
-        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AccountViewController") as? AccountViewController {
-            vc.title = "Account"
-            controllers.append(vc)
-        }
-        
-        var container = YSLContainerViewController(controllers: controllers, topBarHeight: 0, parentViewController: self)
+        setupControllers()
+        var container = YSLContainerViewController(controllers: accountControllers, topBarHeight: 0, parentViewController: self)
         container.delegate = self
         self.view.insertSubview(container.view, atIndex: 0)
     }
@@ -29,6 +27,17 @@ class AccountsPagerViewController: UIViewController, YSLContainerViewControllerD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupControllers() {
+        if let data = accountData {
+            for d in data {
+                if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AccountViewController") as? AccountViewController {
+                    vc.title = "Account"
+                    accountControllers.append(vc)
+                }
+            }
+        }
     }
     
     // MARK: - YSLContainerViewControllerDelegate
