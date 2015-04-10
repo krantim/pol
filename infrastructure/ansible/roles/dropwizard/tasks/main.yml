@@ -1,0 +1,5 @@
+---
+# tasks file for dropwizard
+download java
+download gradle
+download dropwizard

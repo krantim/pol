@@ -1,0 +1,14 @@
+Vagrant.configure("2") do |config|
+  # Use vagrant-cachier plugin if possible
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.auto_detect = true
+    config.cache.scope = :box
+  end
+
+  config.ssh.username = "scb"
+  config.vm.hostname = "vagrant.dev"
+
+  # We disable the default synced folder
+  # because it can lead to LARGE shared folders
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+end

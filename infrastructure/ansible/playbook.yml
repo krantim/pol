@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: true
+
+# - include: ci_servers.yml
+# - include: ci_slave_ios.yml
+# # - include: ci_slave_android.yml
+# # - include: ci_slave_windows.yml
+- include: git_servers.yml
+# - include: jira_servers.yml

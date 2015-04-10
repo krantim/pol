@@ -1,0 +1,13 @@
+localhost
+
+[ci_slaves:children]
+ci_slave_ios
+ci_slave_android
+
+[ci_slave_ios]
+192.168.0.10
+192.168.0.20
+
+[ci_slave_android]
+192.168.0.30
+192.168.0.40

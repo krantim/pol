@@ -1,0 +1,4 @@
+---
+# tasks file for mobile-server
+- write config file
+- execute java -jar --config <file>

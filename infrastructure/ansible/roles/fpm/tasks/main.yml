@@ -1,0 +1,19 @@
+---
+- name: Install requirements
+  yum: name={{ item }} state=present
+  with_items:
+      - gcc
+      - make
+      - openssl
+      - openssl-devel
+      - rpm-build
+      - ruby
+      - ruby-devel
+      - rubygems
+      - java-1.8.0-openjdk-devel
+
+- name: Install gems
+  remote_user: vagrant
+  gem: name={{ item }} state=latest
+  with_items:
+      - fpm

@@ -1,0 +1,137 @@
+{
+  "description": "Create custom 'SCB10x' VMs for CentOS",
+  "variables": {
+    "iso_checksum": "eb3c8be6ab668e6d83a118323a789e6c",
+    "iso_filename": "CentOS-6.6-x86_64-minimal"
+  },
+  "builders": [
+    {
+      "boot_command": [
+        "<esc>",
+        "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<enter>"
+      ],
+      "boot_wait": "14s",
+      "disk_size": 40000,
+      "guest_additions_mode": "disable",
+      "guest_os_type": "RedHat_64",
+      "headless": false,
+      "http_directory": "packer/centos/http",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "md5",
+      "iso_urls": [
+        "vendor/{{user `iso_filename`}}.iso",
+        "http://mirror1.ku.ac.th/centos/6.6/isos/x86_64/{{user `iso_filename`}}.iso",
+        "http://packages.scb.dev/vms/{{user `iso_filename`}}.iso"
+      ],
+      "name": "centos-base",
+      "shutdown_command": "echo 'scb' | sudo -S shutdown -P now",
+      "ssh_password": "scb",
+      "ssh_port": 22,
+      "ssh_username": "scb",
+      "ssh_wait_timeout": "60m",
+      "output_directory": "build/centos-base",
+      "type": "virtualbox-iso",
+      "vm_name": "centos-base",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "2048"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ],
+      "virtualbox_version_file": ".vbox_version"
+    },
+    {
+      "boot_command": [
+        "<esc>",
+        "<wait>linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<enter>"
+      ],
+      "boot_wait": "14s",
+      "disk_size": 40000,
+      "guest_additions_mode": "disable",
+      "guest_os_type": "RedHat_64",
+      "headless": false,
+      "http_directory": "packer/centos/http",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "md5",
+      "iso_urls": [
+        "vendor/{{user `iso_filename`}}.iso",
+        "http://mirror1.ku.ac.th/centos/6.6/isos/x86_64/{{user `iso_filename`}}.iso",
+        "http://packages.scb.dev/vms/{{user `iso_filename`}}.iso"
+      ],
+      "name": "centos-vagrant",
+      "shutdown_command": "echo 'scb' | sudo -S shutdown -P now",
+      "ssh_password": "scb",
+      "ssh_port": 22,
+      "ssh_username": "scb",
+      "ssh_wait_timeout": "120m",
+      "output_directory": "build/centos-vagrant",
+      "type": "virtualbox-iso",
+      "vm_name": "centos-vagrant",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "2048"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ],
+      "virtualbox_version_file": ".vbox_version"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "packer/centos/scripts/init_setup.sh"
+      ],
+      "execute_command": "echo 'scb' | sudo -S sh '{{ .Path }}'"
+    },
+    {
+      "type": "ansible-local",
+      "command": "ansible-playbook",
+      "playbook_file": "ansible/playbook.yml",
+      "inventory_file": "ansible/inventory.yml",
+      "extra_arguments": [
+        "--sudo",
+        "--limit 127.0.0.1"
+      ],
+      "group_vars": "ansible/group_vars",
+      "role_paths": [
+        "ansible/roles/common",
+        "ansible/roles/git",
+        "ansible/roles/jenkins",
+        "ansible/roles/jira"
+      ],
+      "only": [ "centos-vagrant" ]
+    },
+    {
+      "type": "file",
+      "source": "test",
+      "destination": "/tmp",
+      "only": [ "centos-vagrant" ]
+    },
+    {
+      "type": "shell",
+      "script": "packer/centos/scripts/serverspec.sh",
+      "execute_command": "echo 'scb' | sudo -S sh '{{ .Path }}'",
+      "only": [ "centos-vagrant" ]
+    },
+    {
+      "type": "shell",
+      "script": "packer/centos/scripts/cleanup.sh",
+      "execute_command": "echo 'scb' | sudo -S sh '{{ .Path }}'"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "keep_input_artifact": true,
+      "compression_level": 5,
+      "output": "dist/scb-{{user `iso_filename`}}-base.box",
+      "vagrantfile_template": "packer/centos/files/vagrant/Vagrantfile",
+      "only": [ "centos-base" ]
+    },
+    {
+      "type": "vagrant",
+      "keep_input_artifact": true,
+      "compression_level": 5,
+      "output": "dist/scb-{{user `iso_filename`}}-vagrant.box",
+      "vagrantfile_template": "packer/centos/files/vagrant/Vagrantfile",
+      "only": [ "centos-vagrant" ]
+    }
+  ]
+}

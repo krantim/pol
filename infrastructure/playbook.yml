@@ -1,0 +1,59 @@
+---
+- hosts: all
+  vars:
+    mac_packages:
+      - git
+      - jenkins-lts
+      - nginx
+      - packer
+      - rcm
+      - rbenv
+      - ruby-build
+      - zsh
+#  remote_user: jenkins
+#  sudo: yes
+  handlers:
+    - name: start jenkins
+      command: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins-lts.plist
+  tasks:
+  - name: Register homebrew taps (needed for jenkins-lts and packer)
+    homebrew_tap: tap={{ item }} state=present
+    with_items:
+      - homebrew/binary
+      - homebrew/versions
+      - thoughtbot/formulae
+      - caskroom/fonts
+      - caskroom/cask
+
+  - name: ensure packages are installed
+    homebrew: pkg={{item}} state=latest
+    with_items: mac_packages
+
+  - homebrew_cask: name=font-inconsolata-dz-for-powerline state=present
+
+
+  - name: Pull in vim plugins
+    git: repo=git://github.com/{{ item.name }}/{{ item.repo }}.git
+         dest={{ lookup('env','HOME') }}/.janus/{{ item.repo }}
+         update=no
+         accept_hostkey=yes
+    with_items:
+      - { name: 'vim-scripts', repo: 'Auto-Pairs' }
+      - { name: 'vim-scripts', repo: 'Align' }
+      - { name: 'Lokaltog', repo: 'vim-powerline' }
+      - { name: 'rizzatti', repo: 'funcoo.vim' }
+      - { name: 'rizzatti', repo: 'dash.vim' }
+
+
+# To have launchd start jenkins-lts at login:
+#     mkdir -p ~/Library/LaunchAgents
+#     ln -sfv /usr/local/opt/jenkins-lts/*.plist ~/Library/LaunchAgents
+# Then to load jenkins-lts now:
+#     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins-lts.plist
+# Or, if you don't want/need launchctl, you can just run:
+#     jenkins-lts
+#
+
+#- name: Configure nginx
+#  template: src=files/nginx.conf dest=/usr/local/etc/nginx/nginx.conf
+

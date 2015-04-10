@@ -1,0 +1,10 @@
+---
+- hosts: git
+  gather_facts: true
+  user: vagrant
+  sudo: yes
+  roles:
+    # - role: common
+    # - role: docker
+    # - role: git
+    - role: fpm

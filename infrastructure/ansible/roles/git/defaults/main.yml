@@ -1,0 +1,5 @@
+---
+# defaults file for git
+git_packages:
+  - git
+  - python-psycopg2

@@ -1,0 +1,4 @@
+---
+- name: Ensure packages are installed
+  yum: pkg={{item}} state=latest
+  with_items: common_packages

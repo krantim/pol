@@ -1,0 +1,17 @@
+---
+- name: install the EPEL repo
+  yum: name=http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+       state=present
+
+- name: Remove unneeded packages
+  yum: name={{ item }} state=absent
+  with_items:
+    - docker
+
+- name: Install required packages
+  yum: name={{ item }} state=installed
+  with_items:
+    - docker-io
+
+- name: start docker service
+  service: name=docker state=started enabled=yes

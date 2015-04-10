@@ -1,0 +1,8 @@
+.vagrant/
+bin/
+build/
+dist/
+logs/
+packer_cache
+vendor/*.box
+vendor/*.iso

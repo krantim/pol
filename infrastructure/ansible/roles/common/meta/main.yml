@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: SCB 10x Team
+  description: Installs/Configures common settings
+  company: SCB
+  license: MIT
+  min_ansible_version: 1.6
+  platforms:
+    - name: CentOS
+      versions:
+        - all
+  categories:
+    - system
+dependencies: []

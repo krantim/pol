@@ -1,0 +1,28 @@
+---
+# @see http://blog.didierstevens.com/2008/12/30/howto-make-your-own-cert-with-openssl/
+# @see https://devcenter.heroku.com/articles/ssl-certificate-self#generate-ssl-certificate
+
+# tasks file for ssl
+# openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+# openssl rsa -passin pass:x -in server.pass.key -out server.key
+#
+# rm server.pass.key
+
+# openssl req -new -key server.key -out server.csr
+
+
+# Generate SSL certificate
+# Next, we create our self-signed root CA certificate ca.crt; you’ll need to provide an identity for your root CA
+#
+# openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+
+# Next step: create our subordinate CA that will be used for the actual signing. First, generate the key:
+#
+# openssl genrsa -out ia.key 4096
+
+# Then, request a certificate for this subordinate CA:
+
+# openssl req -new -key ia.key -out ia.csr
+# openssl x509 -req -days 730 -in ia.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out ia.crt
+# openssl pkcs12 -export -out ia.p12 -inkey ia.key -in ia.crt -chain -CAfile ca.crt

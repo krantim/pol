@@ -1,0 +1,19 @@
+---
+# defaults file for jenkins
+jenkins_plugins:
+# Build Monitor Plugin     Success
+# Parameterized Trigger Plugin     Success
+# jQuery Plugin     Success
+# Build Pipeline Plugin     Success
+# Green Balls     Success
+# AnsiColor Plugin     Success
+# Ruby Plugin     Success
+# Token Macro Plugin     Success
+# Email-ext plugin
+#  Installing
+# Xcode Plugin     Pending
+# JIRA Plugin     Pending
+# Timestamper     Pending
+# Sounds plugin     Pending
+# JobConfigHistory Plugin
+# Copy Artifact Plugin

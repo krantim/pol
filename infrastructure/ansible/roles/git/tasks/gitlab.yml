@@ -1,0 +1,71 @@
+---
+# Installation is based on the packager.io package
+# @see https://packager.io/gh/gitlabhq/gitlabhq/install?bid=193#centos-6-gitlab-ce
+
+# TODO Check why postgres is not starting
+# - https://wiki.postgresql.org/wiki/YUM_Installation
+# - http://www.postgresql.org/download/linux/redhat/
+
+- name: Install required packages
+  yum: name={{ item }} state=installed
+  with_items: git_packages
+
+- name: Setup the peripheral services
+  yum: name={{ item }} state=installed
+  with_items:
+    - postgresql
+    - postgresql-contrib
+    - postgresql-server
+# TODO compile
+# @see http://serverfault.com/questions/667857/redis-installation-on-centos-6-5
+# $ wget http://download.redis.io/releases/redis-2.8.19.tar.gz
+# $ tar xzvf redis-2.8.19.tar.gz
+# $ cd redis-2.8.19
+# $ make
+# $ make install
+#    - redis-server
+    - postfix
+# TODO compile
+#    - ruby1.9.1
+
+
+#
+# SETUP DATABASE
+# @see https://github.com/gitlabhq/gitlab-recipes/tree/master/install/pkgr#2-setup-the-peripheral-services
+#
+- name: Create 'gitlab' user
+  postgresql_user: name=gitlab
+                   password=gitlab
+                   role_attr_flags=SUPERUSER
+                   state=present
+
+- name: Create 'gitlab' db
+  postgresql_db: name=gitlab
+
+- name: Grant permissions to 'gitlab' user
+  postgresql_privs: >
+    database=gitlab
+    privs=ALL
+    roles=gitlab
+    grant_option=yes
+    state=present
+
+#
+# CONFIGURE GITLAB
+# @see https://github.com/gitlabhq/gitlab-recipes/tree/master/install/pkgr#3-configure-the-package
+#
+
+#
+# INSTALL PACKAGE
+#
+- name: Register key
+  rpm_key: key=https://rpm.packager.io/key
+           state=present
+
+- name: Add package source
+  template: src=gitlabhq.repo.j2
+            dest=/etc/yum.repos.d/gitlabhq.repo
+
+- name: Install package
+  yum: name=gitlab-ce
+       state=latest
