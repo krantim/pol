@@ -37,13 +37,15 @@
         [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(animateWave) userInfo:nil repeats:YES];
         
         UIImageView *fish = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nemo-29"]];
-        fish.frame = CGRectMake(0, _currentLinePointY+50, 80, 50);
+        
+        fish.frame = CGRectMake(0, _currentLinePointY+80, 40, 25);
+        
         fish.center = CGPointMake(self.center.x, fish.center.y);
         [self addSubview:fish];
         
         CABasicAnimation *moveUp;
         moveUp          = [CABasicAnimation animationWithKeyPath:@"position.y"];
-        moveUp.byValue  = @(-30.0f);
+        moveUp.byValue  = @(-15.0f);
         moveUp.duration = 2.0;
         moveUp.repeatCount = INFINITY;
         moveUp.removedOnCompletion = NO;
@@ -60,7 +62,7 @@
 }
 
 - (void)addBubble {
-    UIView *bubble1 = [[UIView alloc] initWithFrame:CGRectMake(self.center.x-10-arc4random()%10, self.center.y+20+arc4random()%30, 10, 10)];
+    UIView *bubble1 = [[UIView alloc] initWithFrame:CGRectMake(self.center.x-10-arc4random()%10, self.center.y+50+arc4random()%30, 5, 5)];
     bubble1.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.8];
     bubble1.layer.cornerRadius = 5;
     [self addSubview:bubble1];
