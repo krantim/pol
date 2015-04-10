@@ -27,6 +27,9 @@
 		C875355A1AD531F500999099 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535581AD531F500999099 /* YSLScrollMenuView.m */; };
 		C875355C1AD5326300999099 /* AccountsPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355B1AD5326300999099 /* AccountsPagerViewController.swift */; };
 		C875355E1AD5334700999099 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355D1AD5334700999099 /* AccountViewController.swift */; };
+		C88FDB791AD7893C006B8967 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535561AD531F500999099 /* YSLContainerViewController.m */; };
+		C88FDB7D1AD7893E006B8967 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535581AD531F500999099 /* YSLScrollMenuView.m */; };
+		C88FDB821AD78A1F006B8967 /* FakeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88FDB811AD78A1F006B8967 /* FakeServices.swift */; };
 		C89FA5A51AD7803100D965CA /* AccountsPagerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */; };
 		C89FA5A91AD7805F00D965CA /* AccountsPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355B1AD5326300999099 /* AccountsPagerViewController.swift */; };
 		C89FA5AB1AD7816900D965CA /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FA5AA1AD7816900D965CA /* ServicesTests.swift */; };
@@ -125,6 +128,7 @@
 		C87535581AD531F500999099 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLScrollMenuView.m; path = Vendor/YSLScrollMenu/YSLScrollMenuView.m; sourceTree = SOURCE_ROOT; };
 		C875355B1AD5326300999099 /* AccountsPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPagerViewController.swift; sourceTree = "<group>"; };
 		C875355D1AD5334700999099 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		C88FDB811AD78A1F006B8967 /* FakeServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeServices.swift; sourceTree = "<group>"; };
 		C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPagerViewControllerTests.swift; sourceTree = "<group>"; };
 		C89FA5AA1AD7816900D965CA /* ServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C809B6C71AD6624F0047F19A /* AccountBuilder.swift */,
+				C88FDB811AD78A1F006B8967 /* FakeServices.swift */,
 			);
 			name = Builder;
 			sourceTree = "<group>";
@@ -450,7 +455,10 @@
 				C87535311AD5157300999099 /* POLTests.swift in Sources */,
 				C87535531AD51C2500999099 /* Services.swift in Sources */,
 				C89FA5A91AD7805F00D965CA /* AccountsPagerViewController.swift in Sources */,
+				C88FDB821AD78A1F006B8967 /* FakeServices.swift in Sources */,
+				C88FDB7D1AD7893E006B8967 /* YSLScrollMenuView.m in Sources */,
 				C809B6C81AD6624F0047F19A /* AccountBuilder.swift in Sources */,
+				C88FDB791AD7893C006B8967 /* YSLContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +616,7 @@
 				INFOPLIST_FILE = POLTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "POL/POL-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/POL.app/POL";
 			};
 			name = Debug;
@@ -623,6 +632,7 @@
 				INFOPLIST_FILE = POLTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "POL/POL-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/POL.app/POL";
 			};
 			name = Release;

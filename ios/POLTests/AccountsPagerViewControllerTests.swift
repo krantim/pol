@@ -29,11 +29,8 @@ class AccountsPagerViewControllerTests: XCTestCase {
 
     func testCreateControllerFromModel() {
         // This is an example of a functional test case.
-        var account = AccountBuilder().build()
-        
-        vc.accountData = [account]
-        vc.setupControllers()
-        
+        vc.fetchAccountList(services: FakeServices.sharedInstance)
+        XCTAssertGreaterThanOrEqual(vc.accountControllers.count, vc.accountData!.count, "account controller is equal with model")
     }
 
     func testPerformanceExample() {

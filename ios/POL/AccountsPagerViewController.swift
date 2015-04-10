@@ -17,12 +17,6 @@ class AccountsPagerViewController: UIViewController, YSLContainerViewControllerD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        YSLContainerViewController(controllers: accountControllers, topBarHeight: <#CGFloat#>, parentViewController: <#UIViewController!#>)
-        
-        var container = YSLContainerViewController(controllers: accountControllers, topBarHeight: 0, parentViewController: self)
-        container.delegate = self
-        self.view.insertSubview(container.view, atIndex: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +35,10 @@ class AccountsPagerViewController: UIViewController, YSLContainerViewControllerD
                     }
                 }
             }
+            
+            var container = YSLContainerViewController(controllers: self.accountControllers, topBarHeight: 0, parentViewController: self)
+            container.delegate = self
+            self.view.insertSubview(container.view, atIndex: 0)
         }
     }
     
