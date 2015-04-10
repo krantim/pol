@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Created by bon on 4/8/2015 AD.
  */
 public class Account {
+    public double balance;
     private String name;
     private String accountType;
     private String accountNumber;
@@ -15,11 +16,12 @@ public class Account {
 
     }
 
-    public Account(String name, String accountType, String accountNumber, String accountStatus) {
+    public Account(String name, String accountType, String accountNumber, String accountStatus, double balance) {
         this.name = name;
         this.accountType = accountType;
         this.accountNumber = accountNumber;
         this.accountStatus = accountStatus;
+        this.balance = balance;
     }
 
     @JsonProperty
@@ -40,5 +42,10 @@ public class Account {
     @JsonProperty
     public String getAccountStatus() {
         return accountStatus;
+    }
+
+    @JsonProperty
+    public double getBalance() {
+        return balance;
     }
 }

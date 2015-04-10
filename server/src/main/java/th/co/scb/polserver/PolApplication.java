@@ -5,6 +5,7 @@ import io.dropwizard.client.HttpClientBuilder;
 import io.dropwizard.setup.Environment;
 import org.apache.http.client.HttpClient;
 import th.co.scb.polserver.client.POLClient;
+import th.co.scb.polserver.easynet.AccountMapper;
 import th.co.scb.polserver.resources.AccountResource;
 import th.co.scb.polserver.resources.RootResources;
 
@@ -17,7 +18,7 @@ public class PolApplication extends Application<PolConfiguration> {
         POLClient client = registerPOLClient(configuration, environment);
 
         final RootResources resources = new RootResources();
-        final AccountResource accountResource = new AccountResource(client);
+        final AccountResource accountResource = new AccountResource(client, new AccountMapper());
 
         environment.jersey().register(resources);
         environment.jersey().register(accountResource);
