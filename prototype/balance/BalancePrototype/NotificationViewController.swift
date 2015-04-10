@@ -36,7 +36,7 @@ class NotificationViewController: UIViewController, BKPasscodeViewControllerDele
     }
     
     func passcodeViewController(aViewController: BKPasscodeViewController!, authenticatePasscode aPasscode: String!, resultHandler aResultHandler: ((Bool) -> Void)!) {
-        let pin = NSUserDefaults.standardUserDefaults().objectForKey("pin") as String
+        let pin = NSUserDefaults.standardUserDefaults().objectForKey("pin") as! String
         if (aPasscode == pin) {
             isLogin = true
             aResultHandler(true)

@@ -60,6 +60,7 @@
 		C860E5F81ACA9E8900D7DD1A /* OTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		C860E5FA1ACA9ED900D7DD1A /* BalancePrototype-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BalancePrototype-Bridging-Header.h"; sourceTree = "<group>"; };
 		C87535091AD4C6FF00999099 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		C88FDB781AD786CA006B8967 /* BalancePrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BalancePrototype.entitlements; sourceTree = "<group>"; };
 		E101563FD3BC6B40AEA8206A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +123,7 @@
 		C860E5D51ACA94F600D7DD1A /* BalancePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				C88FDB781AD786CA006B8967 /* BalancePrototype.entitlements */,
 				C860E5D81ACA94F600D7DD1A /* AppDelegate.swift */,
 				C860E5DA1ACA94F600D7DD1A /* ViewController.swift */,
 				C860E5DC1ACA94F600D7DD1A /* Main.storyboard */,
@@ -220,12 +222,12 @@
 				TargetAttributes = {
 					C860E5D21ACA94F600D7DD1A = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8A9BJ86542;
-					};
-					C860E5E71ACA94F600D7DD1A = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8A9BJ86542;
-						TestTargetID = C860E5D21ACA94F600D7DD1A;
+						DevelopmentTeam = QCU5S2X4JZ;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

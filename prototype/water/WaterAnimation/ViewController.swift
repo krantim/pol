@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         motionManager.deviceMotionUpdateInterval = 0.01
         
         var motionQueue = NSOperationQueue()
-        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrameXTrueNorthZVertical, toQueue: motionQueue) { (motion, error) -> Void in
+        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrame.XTrueNorthZVertical, toQueue: motionQueue) { (motion, error) -> Void in
             var x = motion.gravity.x
             var y = motion.gravity.y
             var z = motion.gravity.z

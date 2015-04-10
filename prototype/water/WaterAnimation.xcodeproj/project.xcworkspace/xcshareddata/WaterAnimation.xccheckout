@@ -10,31 +10,31 @@
 	<string>WaterAnimation</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B7117295C1852945E09BA827ED5193F0B97C1857</key>
-		<string>https://bitbucket.org/scb10x/wateranimation.git</string>
+		<key>D5E7B3ED2C561F8496ACAEB194ACBEAFB783E71A</key>
+		<string>https://bitbucket.org/scb10x/pol.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WaterAnimation.xcodeproj</string>
+	<string>prototype/water/WaterAnimation.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B7117295C1852945E09BA827ED5193F0B97C1857</key>
-		<string>../..</string>
+		<key>D5E7B3ED2C561F8496ACAEB194ACBEAFB783E71A</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/scb10x/wateranimation.git</string>
+	<string>https://bitbucket.org/scb10x/pol.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B7117295C1852945E09BA827ED5193F0B97C1857</string>
+	<string>D5E7B3ED2C561F8496ACAEB194ACBEAFB783E71A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B7117295C1852945E09BA827ED5193F0B97C1857</string>
+			<string>D5E7B3ED2C561F8496ACAEB194ACBEAFB783E71A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>WaterAnimation</string>
+			<string>pol</string>
 		</dict>
 	</array>
 </dict>

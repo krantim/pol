@@ -32,4 +32,8 @@ class Services: NSObject {
         }
     }
     
+    func getAccountList(completion:([Account]?) -> Void) {
+        
+    }
+    
 }

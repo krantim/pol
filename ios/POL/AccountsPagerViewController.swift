@@ -18,7 +18,8 @@ class AccountsPagerViewController: UIViewController, YSLContainerViewControllerD
 
         // Do any additional setup after loading the view.
         
-        setupControllers()
+        YSLContainerViewController(controllers: accountControllers, topBarHeight: <#CGFloat#>, parentViewController: <#UIViewController!#>)
+        
         var container = YSLContainerViewController(controllers: accountControllers, topBarHeight: 0, parentViewController: self)
         container.delegate = self
         self.view.insertSubview(container.view, atIndex: 0)
@@ -29,12 +30,15 @@ class AccountsPagerViewController: UIViewController, YSLContainerViewControllerD
         // Dispose of any resources that can be recreated.
     }
     
-    func setupControllers() {
-        if let data = accountData {
-            for d in data {
-                if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AccountViewController") as? AccountViewController {
-                    vc.title = "Account"
-                    accountControllers.append(vc)
+    func fetchAccountList(services:Services = Services.sharedInstance) {
+        services.getAccountList { [unowned self] (result) -> Void in
+            self.accountData = result
+            if let data = result {
+                for d in data {
+                    if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AccountViewController") as? AccountViewController {
+                        vc.title = "Account"
+                        self.accountControllers.append(vc)
+                    }
                 }
             }
         }

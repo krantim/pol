@@ -27,6 +27,9 @@
 		C875355A1AD531F500999099 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535581AD531F500999099 /* YSLScrollMenuView.m */; };
 		C875355C1AD5326300999099 /* AccountsPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355B1AD5326300999099 /* AccountsPagerViewController.swift */; };
 		C875355E1AD5334700999099 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355D1AD5334700999099 /* AccountViewController.swift */; };
+		C89FA5A51AD7803100D965CA /* AccountsPagerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */; };
+		C89FA5A91AD7805F00D965CA /* AccountsPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355B1AD5326300999099 /* AccountsPagerViewController.swift */; };
+		C89FA5AB1AD7816900D965CA /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FA5AA1AD7816900D965CA /* ServicesTests.swift */; };
 		C8E426D71AD673A000EC05B4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; };
 		C8E426D91AD673B000EC05B4 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -122,6 +125,8 @@
 		C87535581AD531F500999099 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLScrollMenuView.m; path = Vendor/YSLScrollMenu/YSLScrollMenuView.m; sourceTree = SOURCE_ROOT; };
 		C875355B1AD5326300999099 /* AccountsPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPagerViewController.swift; sourceTree = "<group>"; };
 		C875355D1AD5334700999099 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPagerViewControllerTests.swift; sourceTree = "<group>"; };
+		C89FA5AA1AD7816900D965CA /* ServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,9 +217,11 @@
 		C875352D1AD5157300999099 /* POLTests */ = {
 			isa = PBXGroup;
 			children = (
-				C809B6C61AD662240047F19A /* Builder */,
 				C87535301AD5157300999099 /* POLTests.swift */,
+				C809B6C61AD662240047F19A /* Builder */,
+				C89FA5AC1AD7818000D965CA /* Helper */,
 				C809B6C11AD659B80047F19A /* AccountViewControllerTest.swift */,
+				C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */,
 				C875352E1AD5157300999099 /* Supporting Files */,
 			);
 			path = POLTests;
@@ -269,6 +276,14 @@
 				C87535581AD531F500999099 /* YSLScrollMenuView.m */,
 			);
 			name = YSLScrollMenu;
+			sourceTree = "<group>";
+		};
+		C89FA5AC1AD7818000D965CA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C89FA5AA1AD7816900D965CA /* ServicesTests.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,8 +445,11 @@
 				C809B6C21AD659B80047F19A /* AccountViewControllerTest.swift in Sources */,
 				C809B6C41AD65C700047F19A /* AccountViewController.swift in Sources */,
 				C809B6C31AD65BDE0047F19A /* Account.swift in Sources */,
+				C89FA5A51AD7803100D965CA /* AccountsPagerViewControllerTests.swift in Sources */,
+				C89FA5AB1AD7816900D965CA /* ServicesTests.swift in Sources */,
 				C87535311AD5157300999099 /* POLTests.swift in Sources */,
 				C87535531AD51C2500999099 /* Services.swift in Sources */,
+				C89FA5A91AD7805F00D965CA /* AccountsPagerViewController.swift in Sources */,
 				C809B6C81AD6624F0047F19A /* AccountBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

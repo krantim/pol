@@ -21,26 +21,6 @@ class POLTests: XCTestCase {
         super.tearDown()
     }
     
-    func testServicesInstance() {
-        // This is an example of a functional test case.
-        XCTAssertNotNil(Services.sharedInstance, "Services can instantiate")
-    }
-    
-    func testServiceGetDetail() {
-        let expectation = expectationWithDescription("GET Services detail")
-        
-        Services.sharedInstance.getDetail { (response) -> Void in
-            XCTAssertNotNil(response, "Services is response")
-            expectation.fulfill()
-        }
-        
-        waitForExpectationsWithTimeout(5) { (error) -> Void in
-            if error != nil {
-                XCTFail("Services timeout")
-            }
-        }
-    }
-    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {

@@ -46,7 +46,7 @@ class OTPViewController: GAITrackedViewController, BKPasscodeViewControllerDeleg
         //presentViewController(viewController, animated: true, completion: nil)
         
         var event = GAIDictionaryBuilder.createEventWithCategory("Register", action: "Confirm OTP", label: "OTP", value: NSNumber(int: 0)).build()
-        GAI.sharedInstance().defaultTracker.send(event)
+        GAI.sharedInstance().defaultTracker.send(event as [NSObject:AnyObject])
         
         var mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("Confirm OTP", properties: ["Key": "Value"])
