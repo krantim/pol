@@ -5,15 +5,12 @@ import th.co.scb.polserver.configuration.EasyNetEndpoints;
 import th.co.scb.polserver.core.Account;
 import th.co.scb.polserver.easynet.AccountMapper;
 import th.co.scb.polserver.easynet.EasyNetAccount;
-import th.co.scb.polserver.easynet.EasyNetUser;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by bon on 4/8/2015 AD.

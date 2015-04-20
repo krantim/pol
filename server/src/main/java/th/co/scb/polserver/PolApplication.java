@@ -5,7 +5,6 @@ import io.dropwizard.client.HttpClientBuilder;
 import io.dropwizard.setup.Environment;
 import org.apache.http.client.HttpClient;
 import th.co.scb.polserver.client.POLClient;
-import th.co.scb.polserver.configuration.EasyNetEndpoints;
 import th.co.scb.polserver.easynet.AccountMapper;
 import th.co.scb.polserver.resources.AccountResource;
 

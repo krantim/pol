@@ -7,20 +7,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Account {
     public double balance;
-    private String accountNumber;
+    private String number;
 
     public Account() {
 
     }
 
-    public Account(String accountNumber, double balance) {
-        this.accountNumber = accountNumber;
+    public Account(String number, double balance) {
+        this.number = number;
         this.balance = balance;
     }
 
     @JsonProperty
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getNumber() {
+        return number;
     }
 
     @JsonProperty

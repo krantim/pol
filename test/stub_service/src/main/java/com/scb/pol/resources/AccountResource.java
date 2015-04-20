@@ -9,10 +9,10 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class AccountResource {
 
-    @Path("/{accountNumber}")
+    @Path("/{number}")
     @GET
-    public Account login(@PathParam("accountNumber") String accountNumber) {
-        return new Account(" 123;1,259,353.93;+;1,259,353.93;+;0.00;+;0.00;+;0.00;+;0.00;+;0.00;+;2,883.63;+;27/03/2015;17/09/2014;นางสาว ทดสอบ ทดสอบ;;000;;;1;101;+2,000,000.0");
+    public Account login(@PathParam("number") String number) {
+        return new Account(" " + number + ";1,259,353.93;+;1,259,353.93;+;0.00;+;0.00;+;0.00;+;0.00;+;0.00;+;2,883.63;+;27/03/2015;17/09/2014;นางสาว ทดสอบ ทดสอบ;;000;;;1;101;+2,000,000.0");
     }
 
 }
