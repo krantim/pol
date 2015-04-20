@@ -15,7 +15,7 @@ public class PolConfiguration extends Configuration {
 
     @Valid
     @NotNull
-    @JsonProperty
+    @JsonProperty("httpClient")
     private HttpClientConfiguration httpClient = new HttpClientConfiguration();
 
     @NotNull

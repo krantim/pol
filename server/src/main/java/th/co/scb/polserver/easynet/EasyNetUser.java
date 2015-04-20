@@ -5,16 +5,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class EasyNetUser {
 
     private String userId;
-    private String account;
+    private String accounts;
     private String accountType;
 
     public EasyNetUser() {
 
     }
 
-    public EasyNetUser(String userId, String account, String accountType) {
+    public EasyNetUser(String userId, String accounts, String accountType) {
         this.userId = userId;
-        this.account = account;
+        this.accounts = accounts;
         this.accountType = accountType;
     }
 
@@ -24,8 +24,8 @@ public class EasyNetUser {
     }
 
     @JsonProperty
-    public String getAccount() {
-        return account;
+    public String getAccounts() {
+        return accounts;
     }
 
     @JsonProperty
