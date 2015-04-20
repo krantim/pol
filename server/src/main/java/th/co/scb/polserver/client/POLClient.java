@@ -23,7 +23,7 @@ public class POLClient {
         this.EASY_NET_HOST = host;
     }
 
-    public Object fetchJson(String path, Class clazz) {
+    public Object fetch(String path, Class clazz) {
         try {
             String url = EASY_NET_HOST + "/" + path;
             HttpResponse response = httpClient.execute(new HttpGet(url));

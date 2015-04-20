@@ -24,8 +24,8 @@ public class PolClientTest {
         HttpResponse mockResponse = Utils.createHttpResponseWithBody("{\"value\":\"blah\"}");
         when(mockClient.execute(any(HttpGet.class))).thenReturn(mockResponse);
 
-        POLClient client = new POLClient(mockClient);
-        StubObject result = (StubObject) client.fetchJson("url", StubObject.class);
+        POLClient client = new POLClient(mockClient, "easyNetHost");
+        StubObject result = (StubObject) client.fetch("easyNetHost", StubObject.class);
         assertThat(result.getValue(), equalTo("blah"));
     }
 

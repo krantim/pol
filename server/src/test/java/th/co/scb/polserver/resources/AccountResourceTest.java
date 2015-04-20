@@ -1,14 +1,10 @@
 package th.co.scb.polserver.resources;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import th.co.scb.polserver.client.POLClient;
 import th.co.scb.polserver.core.Account;
 import th.co.scb.polserver.easynet.AccountMapper;
 import th.co.scb.polserver.easynet.EasyNetAccount;
-import th.co.scb.polserver.easynet.EasyNetUser;
-
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
@@ -23,22 +19,17 @@ public class AccountResourceTest {
 
 
     @Test
-    public void shouldReturnAllUserAccounts() throws Exception {
+    public void shouldReturnDetailForGivenAccount() throws Exception {
+        Account expectedAccount = new Account("123", 123.00);
+
         POLClient mockClient = mock(POLClient.class);
+        EasyNetAccount mockEasyNetResponse = new EasyNetAccount(" 123;123.00;+;123.00;+;0.00;+;0.00;+;0.00;+;0.00;+;0.00;+;2,883.63;+;27/03/2015;17/09/2014;นางสาว ทดสอบ ทดสอบ;;000;;;1;101;+2,000,000.0");
+        when(mockClient.fetch(eq("account/123"), any(Class.class))).thenReturn(mockEasyNetResponse);
+
         AccountMapper mockMapper = mock(AccountMapper.class);
+        when(mockMapper.mapAccount(eq(mockEasyNetResponse))).thenReturn(expectedAccount);
 
-        final Account account = new Account("", "Saving", "12345", "", 0);
-
-        EasyNetUser easyNetUser = new EasyNetUser("userid", "12345","2");
-        EasyNetAccount[] easyNetAccounts = new EasyNetAccount[]{
-                new EasyNetAccount(" 123;1,259,353.93;+;1,259,353.93;+;0.00;+;0.00;+;0.00;+;0.00;+;0.00;+;2,883.63;+;27/03/2015;17/09/2014;นางสาว ทดสอบ ทดสอบ;;000;;;1;101;+2,000,000.0")
-        };
-
-        when(mockClient.fetchJson(eq("login"), any(Class.class))).thenReturn(easyNetUser);
-        when(mockClient.fetchJson(eq("account"), any(Class.class))).thenReturn(easyNetAccounts);
-        when(mockMapper.mapAccount(any(EasyNetUser.class), any(EasyNetAccount[].class))).thenReturn(new Account[]{account});
-
-        List<Account> actualAccounts = new AccountResource(mockClient, mockMapper).getAllAccounts("userid");
-        assertThat(actualAccounts.get(0)).isEqualTo(account);
+        Account actualAccount = new AccountResource(mockClient, mockMapper).getAccountDetail("userid", "123");
+        assertThat(actualAccount).isEqualToComparingFieldByField(expectedAccount);
     }
 }

@@ -31,13 +31,13 @@ public class AccountResource {
         this.mapper = mapper;
     }
 
-    @Path("/{userId}/accounts")
+    @Path("/{userId}/accounts/{accountNumber}")
     @GET
-    public List<Account> getAllAccounts(@PathParam("userId") String userId) {
-        EasyNetUser user = (EasyNetUser) client.fetchJson("login?username=" + userId, EasyNetUser.class);
-        EasyNetAccount[] easyNetAccounts = (EasyNetAccount[]) client.fetchJson(ACCOUNT_URL, EasyNetAccount[].class);
-
-        Account[] accounts = mapper.mapAccount(user, easyNetAccounts);
-        return Arrays.asList(accounts);
+    public Account getAccountDetail(@PathParam("userId") String userId, @PathParam("accountNumber") String accountNumber) {
+        String fetchUrl = ACCOUNT_URL + "/" + accountNumber;
+        EasyNetAccount easyNetAccount = (EasyNetAccount) client.fetch(fetchUrl, EasyNetAccount.class);
+        Account account = mapper.mapAccount(easyNetAccount);
+        return account;
     }
+
 }

@@ -15,23 +15,20 @@ public class AccountMapper {
         accountTypeMap.put("2", "Savings");
     }
 
-    public Account[] mapAccount(EasyNetUser user, EasyNetAccount[] easyNetAccounts ) {
-        Account[] accounts = new Account[easyNetAccounts.length];
-        for(int i=0; i<easyNetAccounts.length; i++){
-            EasyNetAccount easyNetAccount = easyNetAccounts[i];
-            String[] details = easyNetAccount.getBalanceDetail().split(";");
+    public Account mapAccount(EasyNetAccount easyNetAccount) {
+        Account account = null;
 
-            NumberFormat format = NumberFormat.getInstance(new Locale("th","TH"));
+        String[] details = easyNetAccount.getBalanceDetail().split(";");
 
-            try {
-                Account account = new Account("", accountTypeMap.get(user.getAccountType()), details[0].trim(), "", format.parse(details[1]).doubleValue());
-                accounts[i] = account;
-            }catch (ParseException e){
-                //TODO error handling
-                e.printStackTrace();
-            }
+        NumberFormat format = NumberFormat.getInstance(new Locale("th", "TH"));
+
+        try {
+            account = new Account(details[0].trim(), format.parse(details[1]).doubleValue());
+        } catch (ParseException e) {
+            //TODO error handling
+            e.printStackTrace();
         }
-        return accounts;
+        return account;
     }
 
 }
