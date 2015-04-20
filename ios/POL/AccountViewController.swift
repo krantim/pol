@@ -26,9 +26,9 @@ class AccountViewController: UIViewController {
     }
     
     func setupAccountData(account:Account) {
-        accountNameLabel.text = account.accountName
-        accountNumberLabel.text = account.accountNumber
-        accountTypeLabel.text = account.getAccountTypeString()
+//        accountNameLabel.text = account.accountName
+//        accountNumberLabel.text = account.accountNumber
+//        accountTypeLabel.text = account.getAccountTypeString()
     }
 
     /*

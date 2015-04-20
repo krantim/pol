@@ -12,23 +12,40 @@ enum AccountType : Int {
     case Saving
 }
 
-class Account: NSObject {
+class Account {
    
-    var accountName:String?
-    var accountNumber:String?
-    var accountType:AccountType?
+    var name:String
+    var number:String
+    var type:AccountType
+
+    init(number:String, name:String, type:AccountType) {
+        self.name = name
+        self.number = number
+        self.type = type
+    }
     
-    func getAccountTypeString() -> String? {
-        if let type = accountType {
-            switch type {
-            case .Saving:
-                return "Saving Account"
-            default:
-                return nil
-            }
+    func maskNumber() -> String? {
+        if count(number) == 10 {
+            var maskNumber = "XXXXXX\((number as NSString).substringFromIndex(5))"
+            return maskNumber
         }
-        
         return nil
     }
+    
+    func formatNumber() -> String? {
+        if count(number) == 10 {
+            return "\(number[0...2])-\(number[3...8])-\(number[9])"
+        }
+        return nil
+    }
+    
+    func formatMaskNumber() -> String? {
+        var s = Array(number)
+        if count(s) == 10 {
+            return "XXX-XXX\(number[6...8])-\(number[9])"
+        }
+        return nil
+    }
+    
     
 }

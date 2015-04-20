@@ -20,7 +20,6 @@
 		C87535201AD5157300999099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875351E1AD5157300999099 /* Main.storyboard */; };
 		C87535221AD5157300999099 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C87535211AD5157300999099 /* Images.xcassets */; };
 		C87535251AD5157300999099 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87535231AD5157300999099 /* LaunchScreen.xib */; };
-		C87535311AD5157300999099 /* POLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87535301AD5157300999099 /* POLTests.swift */; };
 		C87535511AD51BBA00999099 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87535501AD51BBA00999099 /* Services.swift */; };
 		C87535531AD51C2500999099 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87535501AD51BBA00999099 /* Services.swift */; };
 		C87535591AD531F500999099 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535561AD531F500999099 /* YSLContainerViewController.m */; };
@@ -35,6 +34,13 @@
 		C89FA5AB1AD7816900D965CA /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FA5AA1AD7816900D965CA /* ServicesTests.swift */; };
 		C8E426D71AD673A000EC05B4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; };
 		C8E426D91AD673B000EC05B4 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D76DB5E11AE4DB4B00772854 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5E01AE4DB4B00772854 /* User.swift */; };
+		D76DB5E21AE4DB6F00772854 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5E01AE4DB4B00772854 /* User.swift */; };
+		D76DB5E41AE4DB8E00772854 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5E31AE4DB8E00772854 /* UserTest.swift */; };
+		D76DB5E61AE4E0E700772854 /* UserBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5E51AE4E0E700772854 /* UserBuilder.swift */; };
+		D76DB5E81AE4FB5F00772854 /* AccountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5E71AE4FB5F00772854 /* AccountTest.swift */; };
+		D76DB5EB1AE5122300772854 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5EA1AE5122300772854 /* StringExtension.swift */; };
+		D76DB5EC1AE5122300772854 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5EA1AE5122300772854 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +125,6 @@
 		C87535241AD5157300999099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C875352A1AD5157300999099 /* POLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C875352F1AD5157300999099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C87535301AD5157300999099 /* POLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POLTests.swift; sourceTree = "<group>"; };
 		C875354C1AD5199800999099 /* POL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "POL-Bridging-Header.h"; sourceTree = "<group>"; };
 		C87535501AD51BBA00999099 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Services.swift; path = Helper/Services.swift; sourceTree = "<group>"; };
 		C87535551AD531F500999099 /* YSLContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLContainerViewController.h; path = Vendor/YSLScrollMenu/YSLContainerViewController.h; sourceTree = SOURCE_ROOT; };
@@ -131,6 +136,11 @@
 		C88FDB811AD78A1F006B8967 /* FakeServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeServices.swift; sourceTree = "<group>"; };
 		C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPagerViewControllerTests.swift; sourceTree = "<group>"; };
 		C89FA5AA1AD7816900D965CA /* ServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
+		D76DB5E01AE4DB4B00772854 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
+		D76DB5E31AE4DB8E00772854 /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		D76DB5E51AE4E0E700772854 /* UserBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBuilder.swift; sourceTree = "<group>"; };
+		D76DB5E71AE4FB5F00772854 /* AccountTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTest.swift; sourceTree = "<group>"; };
+		D76DB5EA1AE5122300772854 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Util/StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +168,7 @@
 			children = (
 				C809B6C71AD6624F0047F19A /* AccountBuilder.swift */,
 				C88FDB811AD78A1F006B8967 /* FakeServices.swift */,
+				D76DB5E51AE4E0E700772854 /* UserBuilder.swift */,
 			);
 			name = Builder;
 			sourceTree = "<group>";
@@ -222,7 +233,7 @@
 		C875352D1AD5157300999099 /* POLTests */ = {
 			isa = PBXGroup;
 			children = (
-				C87535301AD5157300999099 /* POLTests.swift */,
+				D76DB5DF1AE4D5BF00772854 /* Model */,
 				C809B6C61AD662240047F19A /* Builder */,
 				C89FA5AC1AD7818000D965CA /* Helper */,
 				C809B6C11AD659B80047F19A /* AccountViewControllerTest.swift */,
@@ -244,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				C81979001AD6340800518CBB /* Account.swift */,
+				D76DB5E01AE4DB4B00772854 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -258,6 +270,7 @@
 		C875353C1AD517C700999099 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				D76DB5E91AE5116600772854 /* Util */,
 				C87535541AD531EB00999099 /* YSLScrollMenu */,
 				C81978EC1AD62E4800518CBB /* Alamofire.xcodeproj */,
 			);
@@ -289,6 +302,23 @@
 				C89FA5AA1AD7816900D965CA /* ServicesTests.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		D76DB5DF1AE4D5BF00772854 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D76DB5E31AE4DB8E00772854 /* UserTest.swift */,
+				D76DB5E71AE4FB5F00772854 /* AccountTest.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D76DB5E91AE5116600772854 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D76DB5EA1AE5122300772854 /* StringExtension.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,9 +464,11 @@
 			files = (
 				C875351D1AD5157300999099 /* ViewController.swift in Sources */,
 				C87535591AD531F500999099 /* YSLContainerViewController.m in Sources */,
+				D76DB5EB1AE5122300772854 /* StringExtension.swift in Sources */,
 				C875355E1AD5334700999099 /* AccountViewController.swift in Sources */,
 				C87535511AD51BBA00999099 /* Services.swift in Sources */,
 				C875351B1AD5157300999099 /* AppDelegate.swift in Sources */,
+				D76DB5E11AE4DB4B00772854 /* User.swift in Sources */,
 				C81979011AD6340800518CBB /* Account.swift in Sources */,
 				C875355C1AD5326300999099 /* AccountsPagerViewController.swift in Sources */,
 				C875355A1AD531F500999099 /* YSLScrollMenuView.m in Sources */,
@@ -447,15 +479,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76DB5E21AE4DB6F00772854 /* User.swift in Sources */,
 				C809B6C21AD659B80047F19A /* AccountViewControllerTest.swift in Sources */,
 				C809B6C41AD65C700047F19A /* AccountViewController.swift in Sources */,
 				C809B6C31AD65BDE0047F19A /* Account.swift in Sources */,
+				D76DB5EC1AE5122300772854 /* StringExtension.swift in Sources */,
 				C89FA5A51AD7803100D965CA /* AccountsPagerViewControllerTests.swift in Sources */,
 				C89FA5AB1AD7816900D965CA /* ServicesTests.swift in Sources */,
-				C87535311AD5157300999099 /* POLTests.swift in Sources */,
+				D76DB5E41AE4DB8E00772854 /* UserTest.swift in Sources */,
+				D76DB5E81AE4FB5F00772854 /* AccountTest.swift in Sources */,
 				C87535531AD51C2500999099 /* Services.swift in Sources */,
 				C89FA5A91AD7805F00D965CA /* AccountsPagerViewController.swift in Sources */,
 				C88FDB821AD78A1F006B8967 /* FakeServices.swift in Sources */,
+				D76DB5E61AE4E0E700772854 /* UserBuilder.swift in Sources */,
 				C88FDB7D1AD7893E006B8967 /* YSLScrollMenuView.m in Sources */,
 				C809B6C81AD6624F0047F19A /* AccountBuilder.swift in Sources */,
 				C88FDB791AD7893C006B8967 /* YSLContainerViewController.m in Sources */,

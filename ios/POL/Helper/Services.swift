@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-let DEV_ENDPOINT = "http://httpbin.org"
+let DEV_ENDPOINT = "http://localhost:8080"
 
 class Services: NSObject {
     
