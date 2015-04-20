@@ -9,14 +9,15 @@ public class User {
         // Jackson deserialization
     }
 
-    public User(String userId, List<Account> accounts) {
+    public User(String userId, String accounts, String accountType) {
         this.userId = userId;
         this.accounts = accounts;
+        this.accountType = accountType;
     }
 
-    public String userId;
-
-    public List<Account> accounts;
+    private String userId;
+    private String accounts;
+    private String accountType;
 
     @JsonProperty
     public String getUserId() {
@@ -24,7 +25,12 @@ public class User {
     }
 
     @JsonProperty
-    public List<Account> getAccounts() {
+    public String getAccounts() {
         return accounts;
+    }
+
+    @JsonProperty
+    public String getAccountType() {
+        return accountType;
     }
 }

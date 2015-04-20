@@ -34,7 +34,7 @@ public class AccountResource {
     @Path("/{userId}/accounts")
     @GET
     public List<Account> getAllAccounts(@PathParam("userId") String userId) {
-        EasyNetUser user = (EasyNetUser) client.fetchJson("login", EasyNetUser.class);
+        EasyNetUser user = (EasyNetUser) client.fetchJson("login?username=" + userId, EasyNetUser.class);
         EasyNetAccount[] easyNetAccounts = (EasyNetAccount[]) client.fetchJson(ACCOUNT_URL, EasyNetAccount[].class);
 
         Account[] accounts = mapper.mapAccount(user, easyNetAccounts);

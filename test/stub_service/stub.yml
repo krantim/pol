@@ -1,0 +1,13 @@
+#server:
+#  type: simple
+#  connector:
+#  type: http
+#  port: 8080
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 9080
+  adminConnectors:
+    - type: http
+      port: 9081

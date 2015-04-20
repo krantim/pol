@@ -18,8 +18,16 @@ public class PolConfiguration extends Configuration {
     @JsonProperty
     private HttpClientConfiguration httpClient = new HttpClientConfiguration();
 
+    @NotNull
+    private String easyNetHost;
+
+    @JsonProperty("httpClient")
     public HttpClientConfiguration getHttpClientConfiguration() {
         return httpClient;
     }
 
+    @JsonProperty("easyNetHost")
+    public String getEasyNetHost() {
+        return easyNetHost;
+    }
 }

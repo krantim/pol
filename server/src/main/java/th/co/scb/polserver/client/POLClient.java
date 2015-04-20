@@ -16,13 +16,16 @@ import java.io.*;
 public class POLClient {
 
     private HttpClient httpClient;
+    private final String EASY_NET_HOST;
 
-    public POLClient(HttpClient httpClient) {
+    public POLClient(HttpClient httpClient, String host) {
         this.httpClient = httpClient;
+        this.EASY_NET_HOST = host;
     }
 
-    public Object fetchJson(String url, Class clazz) {
+    public Object fetchJson(String path, Class clazz) {
         try {
+            String url = EASY_NET_HOST + "/" + path;
             HttpResponse response = httpClient.execute(new HttpGet(url));
             String content = EntityUtils.toString(response.getEntity());
             final ObjectMapper MAPPER = Jackson.newObjectMapper();
