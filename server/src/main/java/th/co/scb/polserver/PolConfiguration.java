@@ -1,9 +1,9 @@
 package th.co.scb.polserver;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
 import io.dropwizard.client.HttpClientConfiguration;
+import th.co.scb.polserver.configuration.EasyNetEndpoints;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -30,4 +30,14 @@ public class PolConfiguration extends Configuration {
     public String getEasyNetHost() {
         return easyNetHost;
     }
+
+    @Valid
+    @NotNull
+    private EasyNetEndpoints easyNetEndpoints;
+
+    @JsonProperty("easyNetEndpoints")
+    public EasyNetEndpoints getEasyNetEndpoints() {
+        return easyNetEndpoints;
+    }
+
 }

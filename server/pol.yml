@@ -1,1 +1,4 @@
 easyNetHost: http://localhost:9080
+
+easyNetEndpoints:
+  accountUrl: account

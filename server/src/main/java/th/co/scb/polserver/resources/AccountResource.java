@@ -1,6 +1,7 @@
 package th.co.scb.polserver.resources;
 
 import th.co.scb.polserver.client.POLClient;
+import th.co.scb.polserver.configuration.EasyNetEndpoints;
 import th.co.scb.polserver.core.Account;
 import th.co.scb.polserver.easynet.AccountMapper;
 import th.co.scb.polserver.easynet.EasyNetAccount;
@@ -22,19 +23,20 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class AccountResource {
 
-    private static final String ACCOUNT_URL = "account";
+    private final EasyNetEndpoints endpoints;
     private final POLClient client;
     private final AccountMapper mapper;
 
-    public AccountResource(POLClient client, AccountMapper mapper) {
+    public AccountResource(POLClient client, AccountMapper mapper, EasyNetEndpoints endpoints) {
         this.client = client;
         this.mapper = mapper;
+        this.endpoints = endpoints;
     }
 
     @Path("/{userId}/accounts/{accountNumber}")
     @GET
     public Account getAccountDetail(@PathParam("userId") String userId, @PathParam("accountNumber") String accountNumber) {
-        String fetchUrl = ACCOUNT_URL + "/" + accountNumber;
+        String fetchUrl = endpoints.getAccountUrl() + "/" + accountNumber;
         EasyNetAccount easyNetAccount = (EasyNetAccount) client.fetch(fetchUrl, EasyNetAccount.class);
         Account account = mapper.mapAccount(easyNetAccount);
         return account;
