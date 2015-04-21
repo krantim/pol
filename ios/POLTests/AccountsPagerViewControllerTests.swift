@@ -27,17 +27,17 @@ class AccountsPagerViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testCreateControllerFromModel() {
-        // This is an example of a functional test case.
-        vc.fetchAccountList(services: FakeServices.sharedInstance)
-        XCTAssertGreaterThanOrEqual(vc.accountControllers.count, vc.accountData!.count, "account controller is equal with model")
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
+//    func testCreateControllerFromModel() {
+//        // This is an example of a functional test case.
+//        vc.fetchAccountList(services: FakeServices.sharedInstance)
+//        XCTAssertGreaterThanOrEqual(vc.accountControllers.count, vc.accountData!.count, "account controller is equal with model")
+//    }
+//
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measureBlock() {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
 
 }

@@ -38,11 +38,28 @@ class AccountTest: XCTestCase {
         
     }
     
+    func test_account_should_have_balance() {
+        var account:Account = accountBuilder.build()!
+        XCTAssertNotNil(account.balance, "account should have balance info")
+    }
+    
     func test_account_can_mask_account_number(){
         
         var account:Account = accountBuilder.build()!
         var accountNumber = account.number as NSString
         XCTAssertTrue(account.maskNumber()! == "XXXXXX\(accountNumber.substringFromIndex(5))", "account number can mask number")
+        
+    }
+    
+    func test_account_can_compare(){
+        
+        var firstAccount:Account = Account(number: "0123456789", name: "Test", type: .Saving, balance: "100")
+        var secondAccount:Account = Account(number: "0123456789", name: "Test", type: .Saving, balance: "100")
+        var thirdAccount:Account = Account(number: "9876543210", name: "Test", type: .Saving, balance: "100")
+
+        
+        XCTAssertTrue(firstAccount == secondAccount, "accounts should equal")
+        XCTAssertFalse(firstAccount == thirdAccount, "accounts should not equal")
         
     }
     

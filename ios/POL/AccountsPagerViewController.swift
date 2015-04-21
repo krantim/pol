@@ -24,23 +24,23 @@ class AccountsPagerViewController: UIViewController, YSLContainerViewControllerD
         // Dispose of any resources that can be recreated.
     }
     
-    func fetchAccountList(services:Services = Services.sharedInstance) {
-        services.getAccountList { [unowned self] (result) -> Void in
-            self.accountData = result
-            if let data = result {
-                for d in data {
-                    if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AccountViewController") as? AccountViewController {
-                        vc.title = "Account"
-                        self.accountControllers.append(vc)
-                    }
-                }
-            }
-            
-            var container = YSLContainerViewController(controllers: self.accountControllers, topBarHeight: 0, parentViewController: self)
-            container.delegate = self
-            self.view.insertSubview(container.view, atIndex: 0)
-        }
-    }
+//    func fetchAccountList(services:Services = Services.sharedInstance) {
+//        services.getAccountList { [unowned self] (result) -> Void in
+//            self.accountData = result
+//            if let data = result {
+//                for d in data {
+//                    if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AccountViewController") as? AccountViewController {
+//                        vc.title = "Account"
+//                        self.accountControllers.append(vc)
+//                    }
+//                }
+//            }
+//            
+//            var container = YSLContainerViewController(controllers: self.accountControllers, topBarHeight: 0, parentViewController: self)
+//            container.delegate = self
+//            self.view.insertSubview(container.view, atIndex: 0)
+//        }
+//    }
     
     // MARK: - YSLContainerViewControllerDelegate
     

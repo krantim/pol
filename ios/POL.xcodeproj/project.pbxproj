@@ -167,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				C809B6C71AD6624F0047F19A /* AccountBuilder.swift */,
-				C88FDB811AD78A1F006B8967 /* FakeServices.swift */,
 				D76DB5E51AE4E0E700772854 /* UserBuilder.swift */,
+				C88FDB811AD78A1F006B8967 /* FakeServices.swift */,
 			);
 			name = Builder;
 			sourceTree = "<group>";
@@ -233,10 +233,10 @@
 		C875352D1AD5157300999099 /* POLTests */ = {
 			isa = PBXGroup;
 			children = (
+				D7CD5A281AE64FD800AF1937 /* Controller */,
 				D76DB5DF1AE4D5BF00772854 /* Model */,
 				C809B6C61AD662240047F19A /* Builder */,
 				C89FA5AC1AD7818000D965CA /* Helper */,
-				C809B6C11AD659B80047F19A /* AccountViewControllerTest.swift */,
 				C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */,
 				C875352E1AD5157300999099 /* Supporting Files */,
 			);
@@ -319,6 +319,14 @@
 				D76DB5EA1AE5122300772854 /* StringExtension.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		D7CD5A281AE64FD800AF1937 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C809B6C11AD659B80047F19A /* AccountViewControllerTest.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

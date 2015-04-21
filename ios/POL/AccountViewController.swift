@@ -13,11 +13,33 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var accountNameLabel: UILabel!
     @IBOutlet weak var accountNumberLabel: UILabel!
     @IBOutlet weak var accountTypeLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
+    
+    var service:Services?
+    var accountNumber:String?
+    var account:Account?
+    
+    //var user:User?
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //if let accountNum = account.number {
+        
+        if let acc = accountNumber {
+            
+            service?.getAccountInfo(acc, completion: { (acc, error) -> Void in
+                self.account = acc!
+                self.accountNumberLabel.text = self.account?.formatMaskNumber()
+                self.balanceLabel.text = self.account?.balance
+                
+            })
+            
+        }
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

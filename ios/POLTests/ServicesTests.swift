@@ -34,6 +34,22 @@ class ServicesTests: XCTestCase {
         XCTAssertNotNil(Services.sharedInstance, "Services can instantiate")
     }
     
+    
+    func test_service_can_get_account_information() {
+        let expectation =  expectationWithDescription("get account information")
+        
+        Services.sharedInstance.getAccountInfo("YYYYYYYYYY", completion: { (account, error) -> Void in
+            XCTAssertNotNil(account, "service can return account information")
+            expectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(10, handler: { (error) -> Void in
+            if error != nil {
+                XCTFail("service timeout")
+            }
+        })
+    }
+    
 //    func testServiceGetDetail() {
 //        let expectation = expectationWithDescription("GET Services detail")
 //        

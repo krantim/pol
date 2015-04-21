@@ -21,19 +21,30 @@ class Services: NSObject {
         return Static.instance
     }
     
-    func getDetail(completion:(AnyObject?) -> Void) {
-        Alamofire.request(.GET, "\(DEV_ENDPOINT)/get", parameters: ["foo": "bar"])
-            .response { (request, response, data, error) in
-                println(request)
-                println(response)
-                println(error)
-                
-                completion(response)
-        }
-    }
     
-    func getAccountList(completion:([Account]?) -> Void) {
+    func getAccountInfo(accNumber:String, completion:(Account?, NSError?) -> Void) {
+        Alamofire.request(.GET, "\(DEV_ENDPOINT)/users/123/accounts/\(accNumber)", parameters: nil).responseJSON {
+            (request, response, data, error) in
+            
+            if error == nil {
+                if let JSON = data as? NSDictionary {
+                    
+                    if let accNum = JSON["number"] as? String {
+                        var money = JSON["balance"] as! Double
+                        var account = Account(number: accNum, name: "DUMMY", type: AccountType.Saving , balance: "\(money)")
+                        completion(account, nil)
+                    }
+                    else {
+                        completion(nil, NSError(domain: "Invalid JSON data", code: 100 , userInfo: nil))
+                    }
+                    
+                }
+            } else {
+                completion(nil, error)
+            }
+        }
         
     }
+
     
 }

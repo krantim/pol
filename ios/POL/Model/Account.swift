@@ -8,20 +8,33 @@
 
 import UIKit
 
-enum AccountType : Int {
-    case Saving
+func == (lhs: Account, rhs: Account) -> Bool {
+    if lhs.name == rhs.name &&
+        lhs.number == rhs.number &&
+        lhs.type == rhs.type {
+            return true
+    }
+    return false
 }
+
+
+enum AccountType : String {
+    case Saving = "Saving"
+}
+
 
 class Account {
    
     var name:String
     var number:String
     var type:AccountType
-
-    init(number:String, name:String, type:AccountType) {
+    var balance:String
+    
+    init(number:String, name:String, type:AccountType, balance:String) {
         self.name = name
         self.number = number
         self.type = type
+        self.balance = balance
     }
     
     func maskNumber() -> String? {
