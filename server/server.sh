@@ -15,10 +15,3 @@ rm stub.pid
 kill -9 $(cat server.pid)
 rm server.pid
 fi
-
-#if [ "$1" == "start" ];
-#then
-#  echo "start"
-#else
-#  echo "stop"
-#fi
