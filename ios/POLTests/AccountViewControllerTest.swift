@@ -26,7 +26,7 @@ class AccountViewControllerTest: XCTestCase {
     //var service = MockService()
     
 
-    var account = Account(number: ACC_NUM, name: "Test", type: AccountType.Saving, balance: "100")
+    //var account = Account(number: ACC_NUM, name: "Test", type: AccountType.Saving, balance: "100")
     
     override func setUp() {
         super.setUp()
@@ -57,7 +57,7 @@ class AccountViewControllerTest: XCTestCase {
     
     func test_service_available(){
         
-        vc.service?.getAccountInfo(ACC_NUM, completion: { (account, error) -> Void in
+        vc.service.getAccountInfo(ACC_NUM, completion: { (account, error) -> Void in
             XCTAssertNotNil(account, "service should return account")
         })
         

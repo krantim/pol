@@ -15,7 +15,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var accountTypeLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    var service:Services?
+    var service:Services = Services.sharedInstance
     var accountNumber:String?
     var account:Account?
     
@@ -29,10 +29,12 @@ class AccountViewController: UIViewController {
         
         //if let accountNum = account.number {
         
+        //accountNumber = "2012367890"
+        
         if let acc = accountNumber {
             
-            service?.getAccountInfo(acc, completion: { (acc, error) -> Void in
-                self.account = acc!
+            service.getAccountInfo(acc, completion: { (account, error) -> Void in
+                self.account = account!
                 self.accountNumberLabel.text = self.account?.formatMaskNumber()
                 self.balanceLabel.text = self.account?.balance
                 
