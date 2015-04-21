@@ -47,7 +47,7 @@ fatJar {
     exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
 }
 
-task stageFiles {
+task stageFiles << {
     stagingDir.mkdir()
 
     copy {
