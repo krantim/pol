@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+if [ "$1" == "" ];
+then
+echo "Usage: ./server.sh start OR ./server.sh stop"
+exit 1
+fi
+
 if [ "$1" == "start" ];
 then
 java -jar ../test/stub_service/build/libs/stub_service-1.0.jar server ../test/stub_service/stub.yml &
