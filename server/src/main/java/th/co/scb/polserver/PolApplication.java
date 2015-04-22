@@ -6,6 +6,7 @@ import io.dropwizard.setup.Environment;
 import org.apache.http.client.HttpClient;
 import th.co.scb.polserver.client.POLClient;
 import th.co.scb.polserver.easynet.AccountMapper;
+import th.co.scb.polserver.health.PolHealthCheck;
 import th.co.scb.polserver.resources.AccountResource;
 
 /**
@@ -20,6 +21,7 @@ public class PolApplication extends Application<PolConfiguration> {
 
         environment.jersey().register(accountResource);
 
+        environment.healthChecks().register("app", new PolHealthCheck());
 
     }
 
