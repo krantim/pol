@@ -10,19 +10,15 @@ import UIKit
 import Alamofire
 
 let DEV_ENDPOINT = "http://localhost:8080"
+private let _sharedInstance = Services()
 
-class Services: NSObject {
+class Services {
     
-    class var sharedInstance : Services {
-        
-        struct Static {
-            static let instance : Services = Services()
-        }
-        return Static.instance
+    class var sharedInstance: Services {
+        return _sharedInstance
     }
     
-    
-    func getAccountInfo(accNumber:String, completion:(Account?, NSError?) -> Void) {
+    func getAccountInfo(accNumber:String, completion:(Account?, NSError?) -> Void)  {
         Alamofire.request(.GET, "\(DEV_ENDPOINT)/users/123/accounts/\(accNumber)", parameters: nil).responseJSON {
             (request, response, data, error) in
             

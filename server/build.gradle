@@ -8,6 +8,8 @@ project.ext {
     dropWizardConfig = 'polserver.yml'
 }
 
+compileJava.options.encoding = 'UTF-8'
+
 repositories {
     mavenCentral()
 }
@@ -33,6 +35,9 @@ apply plugin: "eu.appsatori.fatjar"
 
 
 version = '1.0'
+
+def stagingDir = new File(project.buildDir, "staging")
+
 fatJar {
     manifest {
         attributes 'Implementation-Title': 'POL Server',
@@ -41,6 +46,27 @@ fatJar {
     }
     exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
 }
+
+task stageFiles << {
+    stagingDir.mkdir()
+
+    copy {
+        from 'pol.yml'
+        into new File(stagingDir, "/opt/pol-server")
+    }
+
+    copy {
+        from 'build/libs'
+        into new File(stagingDir, "/opt/pol-server")
+    }
+
+    copy {
+        from '../infrastructure/new_vagrant/fpm-staging/etc/init/pol-server.conf'
+        into new File(stagingDir, "/etc/init")
+    }
+}
+
+stageFiles.dependsOn fatJar
 
 run {
     args 'server'

@@ -32,8 +32,8 @@ class AccountViewController: UIViewController {
         
         if let acc = accountNumber {
             
-            service.getAccountInfo(acc, completion: { (acc, error) -> Void in
-                self.account = acc!
+            service.getAccountInfo(acc, completion: { (account, error) -> Void in
+                self.account = account!
                 self.accountNumberLabel.text = self.account?.formatMaskNumber()
                 self.balanceLabel.text = self.account?.balance
                 
