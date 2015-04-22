@@ -22,18 +22,18 @@ class Services {
     
     
     func getAccountInfo(accNumber:String, completion:(Account?, NSError?) -> Void)  {
-        
-        var JSON = httpClient.get(DEV_ENDPOINT)
-        
-        if let accNum = JSON["number"] as? String {
-            var money = JSON["balance"] as! Double
-            var account = Account(number: accNum, name: "DUMMY", balance: money)
-            completion(account, nil)
-        }
-        else {
-            completion(nil, NSError(domain: "Invalid JSON data", code: 100 , userInfo: nil))
-        }
-        
+        httpClient.get(DEV_ENDPOINT, completion: { (JSON, error) -> Void in
+
+            if let accNum = JSON!["number"] as? String {
+                var money = JSON!["balance"] as! Double
+                var account = Account(number: accNum, name: "DUMMY", balance: money)
+                completion(account, nil)
+            }
+            else {
+                completion(nil, NSError(domain: "Invalid JSON data", code: 100 , userInfo: nil))
+            }
+            
+        })
     }
 
     

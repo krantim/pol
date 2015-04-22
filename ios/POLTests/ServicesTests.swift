@@ -37,10 +37,10 @@ class ServicesTests: XCTestCase {
 class MockHttpClient:HttpClient {
     let accountNumber:String = "1234567890"
     
-    override func get(url: String) -> NSDictionary {
-        
+    override func get(url: String, completion: (NSDictionary?, NSError?) -> Void) {
         var accountData = ["number":self.accountNumber, "balance":1000.00 ]
-        return accountData
+        completion(accountData, nil)
     }
+    
 }
 

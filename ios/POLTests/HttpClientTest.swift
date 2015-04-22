@@ -12,7 +12,7 @@ import XCTest
 class HttpClientTest: XCTestCase {
 
     
-    var serverURL = "http://localhost"
+    var serverURL = "http://localhost:8081/healthcheck"
     
     override func setUp() {
         super.setUp()
@@ -27,25 +27,19 @@ class HttpClientTest: XCTestCase {
 
     func test_should_get_request() {
         
-        var httpClient = HttpClient()
-        XCTAssertNotNil(httpClient.get(serverURL),"http client should get response from server" )
+        let expectation = expectationWithDescription("GET request")
         
+        var httpClient = HttpClient()
+        httpClient.get(serverURL, completion: { (jsonData, error) -> Void in
+            XCTAssertNil(error, "should not get error from service")
+            XCTAssertNotNil(jsonData, "should get JSON data from service")
+            expectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(5) { (error) -> Void in
+            if error != nil {
+                XCTFail("Request timed out after 5 seconds")
+            }
+        }
     }
-    
-    
-    //    func testServiceGetDetail() {
-    //        let expectation = expectationWithDescription("GET Services detail")
-    //
-    //        Services.sharedInstance.getDetail { (response) -> Void in
-    //            XCTAssertNotNil(response, "Services is response")
-    //            expectation.fulfill()
-    //        }
-    //
-    //        waitForExpectationsWithTimeout(5) { (error) -> Void in
-    //            if error != nil {
-    //                XCTFail("Services timeout")
-    //            }
-    //        }
-    //    }
-
 }
