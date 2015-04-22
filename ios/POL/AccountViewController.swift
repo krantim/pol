@@ -18,7 +18,6 @@ class AccountViewController: UIViewController {
     var service:Services = Services.sharedInstance
     var accountNumber:String?
     var account:Account?
-    var ACCOUNT_NUMBER:String = "1234567890"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +27,15 @@ class AccountViewController: UIViewController {
         accountTypeLabel.accessibilityIdentifier = "accountTypeLabel"
         balanceLabel.accessibilityIdentifier = "balanceLabel"
         
-        accountNumber = ACCOUNT_NUMBER;
-        
         if let acc = accountNumber {
-            
             service.getAccountInfo(acc, completion: { (account, error) -> Void in
-                self.account = account!
-                self.accountNumberLabel.text = self.account?.formatMaskNumber()
-                self.balanceLabel.text = self.account?.balance
-                
+                if let a = account {
+                    self.account = a
+                    self.accountNumberLabel.text = a.formatMaskNumber()
+                    self.balanceLabel.text = a.balance
+                } else {
+                    self.accountNumberLabel.text = "Invalid account number"
+                }
             })
             
         }

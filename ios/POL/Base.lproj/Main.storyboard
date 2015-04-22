@@ -1,55 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6gZ-gZ-TJw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="miY-54-NuM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Account Input View Controller-->
+        <scene sceneID="mai-uH-LBI">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="POL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="miY-54-NuM" customClass="AccountInputViewController" customModule="POL" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="aCv-m1-g87"/>
+                        <viewControllerLayoutGuide type="bottom" id="DZa-3n-S8F"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="Vcy-gS-6P5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo9-BZ-5Rr">
-                                <rect key="frame" x="16" y="28" width="125" height="30"/>
-                                <state key="normal" title="Accounts List">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567890" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-rE-eyZ">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ylX-xF-I2r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyr-Il-KCH">
+                                <rect key="frame" x="281" y="342" width="38" height="30"/>
+                                <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VFz-6d-azI" kind="presentation" id="VnG-vs-cti"/>
+                                    <segue destination="6gZ-gZ-TJw" kind="presentation" identifier="goToAccountViewController" id="naU-fY-izD"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--Accounts Pager View Controller-->
-        <scene sceneID="33M-pw-p4t">
-            <objects>
-                <viewController storyboardIdentifier="AccountsPagerViewController" id="VFz-6d-azI" customClass="AccountsPagerViewController" customModule="POL" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YQU-de-oWe"/>
-                        <viewControllerLayoutGuide type="bottom" id="tKD-aP-rX2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ikt-Zj-qFa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O9j-rE-eyZ" firstAttribute="trailing" secondItem="Vcy-gS-6P5" secondAttribute="trailingMargin" id="0GY-2F-YXe"/>
+                            <constraint firstAttribute="centerX" secondItem="xyr-Il-KCH" secondAttribute="centerX" id="HHz-oQ-jFL"/>
+                            <constraint firstItem="O9j-rE-eyZ" firstAttribute="leading" secondItem="Vcy-gS-6P5" secondAttribute="leadingMargin" id="IR5-uK-UgQ"/>
+                            <constraint firstAttribute="centerY" secondItem="O9j-rE-eyZ" secondAttribute="centerY" id="ddk-Hj-mTJ"/>
+                            <constraint firstItem="xyr-Il-KCH" firstAttribute="top" secondItem="O9j-rE-eyZ" secondAttribute="bottom" constant="27" id="hB6-Yb-Eu2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accountNumberTextField" destination="O9j-rE-eyZ" id="pOi-as-7Lw"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ehi-Lv-c2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4r-BK-sKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="296"/>
+            <point key="canvasLocation" x="340" y="512"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="piY-v2-B2f">
@@ -119,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwF-9E-A7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888" y="320"/>
+            <point key="canvasLocation" x="1182" y="578"/>
         </scene>
     </scenes>
 </document>
