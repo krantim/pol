@@ -51,7 +51,7 @@ task stageFiles << {
     stagingDir.mkdir()
 
     copy {
-        from 'build/resources/main/config.yml'
+        from 'pol.yml'
         into new File(stagingDir, "/opt/pol-server")
     }
 
