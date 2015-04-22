@@ -27,7 +27,6 @@ class AccountViewControllerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         
         var storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
         vc = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as? AccountViewController
@@ -40,20 +39,14 @@ class AccountViewControllerTest: XCTestCase {
         vc.viewDidLoad()
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func test_view_did_load(){
         XCTAssertNotNil(vc.view, "View did not load")
     }
     
     func test_service_available(){
-        
         vc.service.getAccountInfo(ACC_NUM, completion: { (account, error) -> Void in
             XCTAssertNotNil(account, "service should return account")
         })
-        
     }
     
     func test_account_number_mask(){
@@ -61,7 +54,6 @@ class AccountViewControllerTest: XCTestCase {
     }
     
     func test_view_show_balance() {
-        
         XCTAssertEqual(vc.balanceLabel.text!, "100", "view should show balance")
     }
 

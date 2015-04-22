@@ -18,8 +18,4 @@ class FakeServices: Services {
         return Static.instance
     }
     
-//    override func getAccountList(completion:([Account]?) -> Void) {
-//        completion([AccountBuilder().build()!])
-//    }
-    
 }

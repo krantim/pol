@@ -11,21 +11,9 @@ import XCTest
 
 class UserTest: XCTestCase {
     
-    
     let userBuilder = UserBuilder()
     let accountBuilder = AccountBuilder()
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
-
     func test_user_can_instantiate() {
         
         var user:User = userBuilder.build()!
@@ -36,15 +24,11 @@ class UserTest: XCTestCase {
     }
     
     func test_user_should_have_accounts() {
-        
         var user:User = userBuilder.build()!
         XCTAssertNotNil(user.accounts, "user account should not nil")
-
     }
     
-    
     func test_user_can_add_and_delete_account() {
-        
         var user:User = userBuilder.build()!
         var account:Account = accountBuilder.build()!
         var account2:Account = accountBuilder.build()!
@@ -59,21 +43,14 @@ class UserTest: XCTestCase {
         
         user.deleteAccount(account)
         XCTAssertLessThan(user.accounts.count, numberOfAccounts, "user can delete account")
-        
-
     }
     
     func test_user_should_have_default_account() {
-        
         var user:User = userBuilder.build()!
         var account:Account = accountBuilder.build()!
 
         user.addAccount(account)
         user.setDefaultAccount(account)
         XCTAssertNotNil(user.defaultAccount(), "user should have default account")
-        
-        
     }
-    
-    
 }
