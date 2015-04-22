@@ -10,7 +10,6 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
-    @IBOutlet weak var accountNameLabel: UILabel!
     @IBOutlet weak var accountNumberLabel: UILabel!
     @IBOutlet weak var accountTypeLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
@@ -22,7 +21,6 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        accountNameLabel.accessibilityIdentifier = "accountNameLabel"
         accountNumberLabel.accessibilityIdentifier = "accountNumberLabel"
         accountTypeLabel.accessibilityIdentifier = "accountTypeLabel"
         balanceLabel.accessibilityIdentifier = "balanceLabel"

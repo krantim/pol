@@ -23,7 +23,7 @@ class AccountViewControllerTest: XCTestCase {
     var vc: AccountViewController!
     var user = User(id: "1000")
     
-    var account = Account(number: ACC_NUM, name: "Test", type: AccountType.Saving, balance: "100")
+    var account = Account(number: ACC_NUM, name: "Test", balance: 100.0)
     
     override func setUp() {
         super.setUp()
@@ -34,7 +34,7 @@ class AccountViewControllerTest: XCTestCase {
         
         vc.loadView()
 
-        //vc.service = MockService()
+        vc.service = MockService(client: HttpClient())
         vc.accountNumber = ACC_NUM
         
         vc.viewDidLoad()
