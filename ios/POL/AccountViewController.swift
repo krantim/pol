@@ -30,7 +30,7 @@ class AccountViewController: UIViewController {
                 if let a = account {
                     self.account = a
                     self.accountNumberLabel.text = a.formatMaskNumber()
-                    self.balanceLabel.text = a.balance
+                    self.balanceLabel.text = self.formatBalance(self.account!.balance)
                 } else {
                     self.accountNumberLabel.text = "Invalid account number"
                 }
@@ -39,6 +39,16 @@ class AccountViewController: UIViewController {
         }
 
     }
+    
+    
+    func formatBalance(amount: Double) -> String {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.currencySymbol = ""
+        return formatter.stringFromNumber(amount)!
+    }
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
