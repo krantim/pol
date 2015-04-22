@@ -36,8 +36,6 @@ apply plugin: "eu.appsatori.fatjar"
 
 version = '1.0'
 
-def stagingDir = new File(project.buildDir, "staging")
-
 fatJar {
     manifest {
         attributes 'Implementation-Title': 'POL Server',
@@ -46,6 +44,8 @@ fatJar {
     }
     exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
 }
+
+def stagingDir = new File(project.buildDir, "staging")
 
 task stageFiles << {
     stagingDir.mkdir()

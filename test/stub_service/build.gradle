@@ -39,6 +39,30 @@ fatJar {
     exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
 }
 
+def stagingDir = new File(project.buildDir, "staging")
+
+task stageFiles << {
+    stagingDir.mkdir()
+
+    copy {
+        from 'stub.yml'
+        into new File(stagingDir, "/opt/stub-easynet")
+    }
+
+    copy {
+        from 'build/libs'
+        into new File(stagingDir, "/opt/stub-easynet")
+    }
+
+    copy {
+        from '../infrastructure/new_vagrant/fpm-staging/etc/init/stub-easynet.conf'
+        into new File(stagingDir, "/etc/init")
+    }
+}
+
+stageFiles.dependsOn fatJar
+
+
 run {
     args 'server', 'waterfall.yml'
 }
