@@ -23,9 +23,6 @@ class AccountViewControllerTest: XCTestCase {
     var vc: AccountViewController!
     var user = User(id: "1000")
     
-    //var service = MockService()
-    
-
     var account = Account(number: ACC_NUM, name: "Test", type: AccountType.Saving, balance: "100")
     
     override func setUp() {
@@ -41,13 +38,9 @@ class AccountViewControllerTest: XCTestCase {
         vc.accountNumber = ACC_NUM
         
         vc.viewDidLoad()
-        
-        //print(vc.accountNumberLabel.text)
-        
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
@@ -57,7 +50,7 @@ class AccountViewControllerTest: XCTestCase {
     
     func test_service_available(){
         
-        vc.service?.getAccountInfo(ACC_NUM, completion: { (account, error) -> Void in
+        vc.service.getAccountInfo(ACC_NUM, completion: { (account, error) -> Void in
             XCTAssertNotNil(account, "service should return account")
         })
         
@@ -70,24 +63,6 @@ class AccountViewControllerTest: XCTestCase {
     func test_view_show_balance() {
         
         XCTAssertEqual(vc.balanceLabel.text!, "100", "view should show balance")
-    }
-
-    //func test_display_account_detail_from_model ()
-    
-    func testDisplayAccountDetailFromModel() {
-        var account = AccountBuilder().build()
-        vc.setupAccountData(account!)
-        
-//        XCTAssertEqual(vc.accountNameLabel!.text!, account!.accountName!, "account name is equal")
-//        XCTAssertEqual(vc.accountNumberLabel!.text!, account!.accountNumber!, "account number is equal")
-//        XCTAssertEqual(vc.accountTypeLabel!.text!, account!.getAccountTypeString()!, "account type is equal")
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

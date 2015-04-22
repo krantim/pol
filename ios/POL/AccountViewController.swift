@@ -15,23 +15,24 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var accountTypeLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    var service:Services?
+    var service:Services = Services.sharedInstance
     var accountNumber:String?
     var account:Account?
-    
-    //var user:User?
-    
-    
-    
+    var ACCOUNT_NUMBER:String = "1234567890"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //if let accountNum = account.number {
+        accountNameLabel.accessibilityIdentifier = "accountNameLabel"
+        accountNumberLabel.accessibilityIdentifier = "accountNumberLabel"
+        accountTypeLabel.accessibilityIdentifier = "accountTypeLabel"
+        balanceLabel.accessibilityIdentifier = "balanceLabel"
+        
+        accountNumber = ACCOUNT_NUMBER;
         
         if let acc = accountNumber {
             
-            service?.getAccountInfo(acc, completion: { (acc, error) -> Void in
+            service.getAccountInfo(acc, completion: { (acc, error) -> Void in
                 self.account = acc!
                 self.accountNumberLabel.text = self.account?.formatMaskNumber()
                 self.balanceLabel.text = self.account?.balance
@@ -44,23 +45,6 @@ class AccountViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    func setupAccountData(account:Account) {
-//        accountNameLabel.text = account.accountName
-//        accountNumberLabel.text = account.accountNumber
-//        accountTypeLabel.text = account.getAccountTypeString()
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

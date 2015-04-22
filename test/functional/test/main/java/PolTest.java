@@ -1,4 +1,6 @@
 import org.junit.*;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 public class PolTest {
     PolDriver driver;
@@ -8,10 +10,12 @@ public class PolTest {
         driver = new PolDriver();
     }
 
-    @Ignore("To be implemented: our first UI test!")
     @Test
-    public void shouldDoSomething() {
-        Assert.fail();
+    public void shouldHaveAccountNumberLabel() {
+        String expectAccountNumber = "XXX-XXX789-0";
+        WebElement accountNumberLabel = driver.findElementByAccessibilityId("accountNumberLabel");
+        String actualAccountNumber = accountNumberLabel.getText();
+        Assert.assertEquals(expectAccountNumber, actualAccountNumber);
     }
 
     @After

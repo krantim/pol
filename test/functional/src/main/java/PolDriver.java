@@ -7,6 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -15,7 +16,7 @@ public class PolDriver {
     public static final int INTERVAL_IN_MILLIS = 1000;
 
 //    private static final String APP_HOME = System.getenv("HOME") + "/LoginViewExample.app";
-    private static final String APP_HOME = "";
+    private static final String APP_HOME = "../../ios/build/Build/Products/Debug-iphonesimulator/POL.app";
 
     private AppiumDriver driver;
 
@@ -32,15 +33,15 @@ public class PolDriver {
         if (driver == null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("platformName", "iOS");
-            capabilities.setCapability("platformVersion", "8.2");
+            capabilities.setCapability("platformVersion", "8.3");
             capabilities.setCapability("deviceName", "iPhone 6");
-            capabilities.setCapability("app", APP_HOME);
+            capabilities.setCapability("app", new File(APP_HOME).getAbsolutePath());
             driver = new IOSDriver(getUrl("http://127.0.0.1:4723/wd/hub"), capabilities);
         }
         return driver;
     }
 
-    public WebElement findElementByAccessibilityLabel(final String label) {
+    public WebElement findElementByAccessibilityId(final String label) {
         WebDriverWait wait = new WebDriverWait(getDriver(), WAIT_IN_SECONDS, INTERVAL_IN_MILLIS);
         try {
             wait.until(new ExpectedCondition<Object>() {

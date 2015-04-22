@@ -6,6 +6,21 @@ repositories {
 }
 
 dependencies {
+    testCompile 'org.assertj:assertj-core:2.0.0'
     compile 'io.appium:java-client:2.2.0'
 }
 
+//task xcode( type: Exec){
+//    workingDir '${projectDir}/../../ios'
+//}
+task xcode(type:Exec){
+    workingDir '../../ios'
+
+    commandLine 'sh', './build.sh'
+//
+//    standartOutput = new ByteArrayOutputStream()
+//
+//    ext.output = {
+//        return standartOutput.toString();
+//    }
+}
