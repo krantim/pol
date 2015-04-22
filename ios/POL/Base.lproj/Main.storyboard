@@ -64,16 +64,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-bK-Re1">
-                                <rect key="frame" x="16" y="28" width="568" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="MPe-CC-Z6d"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otE-R5-GpQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Account Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otE-R5-GpQ">
                                 <rect key="frame" x="16" y="74" width="568" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="w00-ga-5Rv"/>
@@ -91,9 +82,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ros-Cd-AFF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ros-Cd-AFF">
                                 <rect key="frame" x="202" y="102" width="196" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -102,17 +93,12 @@
                         <constraints>
                             <constraint firstItem="hgI-F9-dHN" firstAttribute="top" secondItem="99E-RI-zCc" secondAttribute="bottom" constant="31" id="5Ko-2V-Gz6"/>
                             <constraint firstItem="hgI-F9-dHN" firstAttribute="leading" secondItem="yvy-JT-ht2" secondAttribute="leading" constant="16" id="7BC-yz-3hz"/>
-                            <constraint firstAttribute="trailing" secondItem="7LY-bK-Re1" secondAttribute="trailing" constant="16" id="7R7-0Y-5fL"/>
-                            <constraint firstItem="7LY-bK-Re1" firstAttribute="leading" secondItem="yvy-JT-ht2" secondAttribute="leading" constant="16" id="CGN-If-nnU"/>
                             <constraint firstItem="otE-R5-GpQ" firstAttribute="leading" secondItem="yvy-JT-ht2" secondAttribute="leadingMargin" id="Gew-40-8vt"/>
-                            <constraint firstItem="otE-R5-GpQ" firstAttribute="top" secondItem="7LY-bK-Re1" secondAttribute="bottom" constant="21" id="WN3-sX-fjU"/>
                             <constraint firstAttribute="trailing" secondItem="hgI-F9-dHN" secondAttribute="trailing" constant="16" id="gci-IE-5y2"/>
-                            <constraint firstItem="7LY-bK-Re1" firstAttribute="top" secondItem="99E-RI-zCc" secondAttribute="bottom" constant="8" id="iDe-P2-gRA"/>
                             <constraint firstItem="otE-R5-GpQ" firstAttribute="trailing" secondItem="yvy-JT-ht2" secondAttribute="trailingMargin" id="r52-21-fus"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="accountNameLabel" destination="7LY-bK-Re1" id="ct0-TU-c8Z"/>
                         <outlet property="accountNumberLabel" destination="hgI-F9-dHN" id="XBe-Zd-IhJ"/>
                         <outlet property="accountTypeLabel" destination="otE-R5-GpQ" id="fcQ-8o-OSH"/>
                         <outlet property="balanceLabel" destination="ros-Cd-AFF" id="ZDr-TL-VKV"/>

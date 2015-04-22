@@ -26,6 +26,8 @@
 		C88FDB791AD7893C006B8967 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535561AD531F500999099 /* YSLContainerViewController.m */; };
 		C88FDB7D1AD7893E006B8967 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C87535581AD531F500999099 /* YSLScrollMenuView.m */; };
 		C88FDB821AD78A1F006B8967 /* FakeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88FDB811AD78A1F006B8967 /* FakeServices.swift */; };
+		C89FA5A51AD7803100D965CA /* AccountsPagerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */; };
+		C89FA5A91AD7805F00D965CA /* AccountsPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875355B1AD5326300999099 /* AccountsPagerViewController.swift */; };
 		C89FA5AB1AD7816900D965CA /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FA5AA1AD7816900D965CA /* ServicesTests.swift */; };
 		C8E426D71AD673A000EC05B4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; };
 		C8E426D91AD673B000EC05B4 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C81978F41AD62E4800518CBB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -37,6 +39,9 @@
 		D76DB5EB1AE5122300772854 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5EA1AE5122300772854 /* StringExtension.swift */; };
 		D76DB5EC1AE5122300772854 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76DB5EA1AE5122300772854 /* StringExtension.swift */; };
 		F4B355681AE7818900FD45F5 /* AccountInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B355671AE7818900FD45F5 /* AccountInputViewController.swift */; };
+		D77755991AE74A430087BA01 /* HttpClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77755981AE74A430087BA01 /* HttpClientTest.swift */; };
+		D777559B1AE74A600087BA01 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777559A1AE74A600087BA01 /* HttpClient.swift */; };
+		D777559C1AE74A600087BA01 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777559A1AE74A600087BA01 /* HttpClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +132,7 @@
 		C87535581AD531F500999099 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLScrollMenuView.m; path = Vendor/YSLScrollMenu/YSLScrollMenuView.m; sourceTree = SOURCE_ROOT; };
 		C875355D1AD5334700999099 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		C88FDB811AD78A1F006B8967 /* FakeServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeServices.swift; sourceTree = "<group>"; };
+		C89FA5A41AD7803000D965CA /* AccountsPagerViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPagerViewControllerTests.swift; sourceTree = "<group>"; };
 		C89FA5AA1AD7816900D965CA /* ServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 		D76DB5E01AE4DB4B00772854 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		D76DB5E31AE4DB8E00772854 /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
@@ -134,6 +140,8 @@
 		D76DB5E71AE4FB5F00772854 /* AccountTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTest.swift; sourceTree = "<group>"; };
 		D76DB5EA1AE5122300772854 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Util/StringExtension.swift; sourceTree = "<group>"; };
 		F4B355671AE7818900FD45F5 /* AccountInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInputViewController.swift; sourceTree = "<group>"; };
+		D77755981AE74A430087BA01 /* HttpClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientTest.swift; sourceTree = "<group>"; };
+		D777559A1AE74A600087BA01 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +169,6 @@
 			children = (
 				C809B6C71AD6624F0047F19A /* AccountBuilder.swift */,
 				D76DB5E51AE4E0E700772854 /* UserBuilder.swift */,
-				C88FDB811AD78A1F006B8967 /* FakeServices.swift */,
 			);
 			name = Builder;
 			sourceTree = "<group>";
@@ -272,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				C87535501AD51BBA00999099 /* Services.swift */,
+				D777559A1AE74A600087BA01 /* HttpClient.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				C89FA5AA1AD7816900D965CA /* ServicesTests.swift */,
+				D77755981AE74A430087BA01 /* HttpClientTest.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -466,6 +475,7 @@
 				C87535511AD51BBA00999099 /* Services.swift in Sources */,
 				C875351B1AD5157300999099 /* AppDelegate.swift in Sources */,
 				D76DB5E11AE4DB4B00772854 /* User.swift in Sources */,
+				D777559B1AE74A600087BA01 /* HttpClient.swift in Sources */,
 				C81979011AD6340800518CBB /* Account.swift in Sources */,
 				C875355A1AD531F500999099 /* YSLScrollMenuView.m in Sources */,
 				F4B355681AE7818900FD45F5 /* AccountInputViewController.swift in Sources */,
@@ -479,12 +489,15 @@
 				D76DB5E21AE4DB6F00772854 /* User.swift in Sources */,
 				C809B6C41AD65C700047F19A /* AccountViewController.swift in Sources */,
 				C809B6C31AD65BDE0047F19A /* Account.swift in Sources */,
+				D777559C1AE74A600087BA01 /* HttpClient.swift in Sources */,
 				D76DB5EC1AE5122300772854 /* StringExtension.swift in Sources */,
 				C89FA5AB1AD7816900D965CA /* ServicesTests.swift in Sources */,
 				D76DB5E41AE4DB8E00772854 /* UserTest.swift in Sources */,
+				D77755991AE74A430087BA01 /* HttpClientTest.swift in Sources */,
 				D76DB5E81AE4FB5F00772854 /* AccountTest.swift in Sources */,
 				C87535531AD51C2500999099 /* Services.swift in Sources */,
 				C88FDB821AD78A1F006B8967 /* FakeServices.swift in Sources */,
+				C89FA5A91AD7805F00D965CA /* AccountsPagerViewController.swift in Sources */,
 				D76DB5E61AE4E0E700772854 /* UserBuilder.swift in Sources */,
 				C88FDB7D1AD7893E006B8967 /* YSLScrollMenuView.m in Sources */,
 				C809B6C81AD6624F0047F19A /* AccountBuilder.swift in Sources */,

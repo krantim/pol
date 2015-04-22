@@ -36,9 +36,17 @@ class AccountTest: XCTestCase {
     }
     
     func test_account_can_compare(){
+<<<<<<< HEAD
         var firstAccount:Account = Account(number: "0123456789", name: "Test", type: .Saving, balance: "100")
         var secondAccount:Account = Account(number: "0123456789", name: "Test", type: .Saving, balance: "100")
         var thirdAccount:Account = Account(number: "9876543210", name: "Test", type: .Saving, balance: "100")
+=======
+        
+        var firstAccount:Account = Account(number: "0123456789", name: "Test", balance: 100.0)
+        var secondAccount:Account = Account(number: "0123456789", name: "Test", balance: 100.0)
+        var thirdAccount:Account = Account(number: "9876543210", name: "Test", balance: 100.0)
+
+>>>>>>> [Ter & Magda][Fix build] Extract service call to HttpClient class for testability.  Mark pending work as PENDING.
         
         XCTAssertTrue(firstAccount == secondAccount, "accounts should equal")
         XCTAssertFalse(firstAccount == thirdAccount, "accounts should not equal")

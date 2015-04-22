@@ -18,22 +18,17 @@ func == (lhs: Account, rhs: Account) -> Bool {
 }
 
 
-enum AccountType : String {
-    case Saving = "Saving"
-}
-
-
 class Account {
    
     var name:String
     var number:String
-    var type:AccountType
-    var balance:String
+    var type:String
+    var balance:Double
     
-    init(number:String, name:String, type:AccountType, balance:String) {
+    init(number:String, name:String, balance:Double) {
         self.name = name
         self.number = number
-        self.type = type
+        self.type = "Savings"
         self.balance = balance
     }
     

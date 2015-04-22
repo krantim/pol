@@ -13,7 +13,7 @@ class AccountBuilder {
     private var account: Account?
     
     init() {
-        account = Account(number: "0123456789", name: randomStringWithLength(20), type: .Saving , balance: "100")
+        account = Account(number: "0123456789", name: randomStringWithLength(20), balance: 100.0)
     }
     
     func withAccountName(accountName: String) -> AccountBuilder {
@@ -23,11 +23,6 @@ class AccountBuilder {
     
     func withAccountNumber(accountNumber: String) -> AccountBuilder {
         account?.number = accountNumber
-        return self
-    }
-    
-    func withAccountType(accountType: AccountType) -> AccountBuilder {
-        account?.type = accountType
         return self
     }
     

@@ -15,7 +15,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var accountTypeLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    var service:Services = Services.sharedInstance
+    var service:Services = Services(client: HttpClient())
     var accountNumber:String?
     var account:Account?
     
